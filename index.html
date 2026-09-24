@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>TrendNest | Trending Finds & Better Deals</title>
+<title>TrendNest | Trending Fashion & Better Finds</title>
 
 <style>
+
+/* =====================================================
+   TRENDNEST LUXURY DESIGN SYSTEM
+===================================================== */
+
+:root{
+  --black:#090909;
+  --black2:#121212;
+  --black3:#1b1b1b;
+  --gold:#d4af37;
+  --gold2:#f3d77a;
+  --cream:#f7f3e8;
+  --white:#ffffff;
+  --text:#171717;
+  --muted:#777;
+  --border:#e8e2d3;
+}
+
 *{
   box-sizing:border-box;
   margin:0;
@@ -19,48 +38,73 @@ html{
 
 body{
   font-family:Arial,Helvetica,sans-serif;
-  background:#f7f7f7;
-  color:#111;
+  background:#f7f6f2;
+  color:var(--text);
+  line-height:1.5;
 }
 
+button,
+input,
+textarea{
+  font-family:inherit;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
 header{
-  background:#111;
-  color:white;
-  padding:20px 6%;
+  position:sticky;
+  top:0;
+  z-index:9999;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
-  position:sticky;
-  top:0;
-  z-index:1000;
+
+  padding:17px 6%;
+
+  background:rgba(9,9,9,.97);
+  border-bottom:1px solid rgba(212,175,55,.25);
+  backdrop-filter:blur(12px);
 }
 
 .logo{
-  font-size:28px;
-  font-weight:bold;
+  color:white;
+  font-size:29px;
+  font-weight:800;
+  letter-spacing:.5px;
 }
 
 .logo span{
-  color:#ff4f81;
+  color:var(--gold);
 }
 
 nav{
   display:flex;
   align-items:center;
-  gap:24px;
+  gap:25px;
 }
 
-nav a{
-  color:white;
+nav > a,
+.dropdown > a{
+  color:#fff;
   text-decoration:none;
-  font-size:15px;
+  font-size:14px;
+  font-weight:600;
+  transition:.25s;
 }
 
-nav a:hover{
-  color:#ff4f81;
+nav > a:hover,
+.dropdown > a:hover{
+  color:var(--gold2);
 }
 
-/* Fashion Dropdown */
+
+/* =====================================================
+   FASHION DROPDOWN
+===================================================== */
 
 .dropdown{
   position:relative;
@@ -68,212 +112,687 @@ nav a:hover{
 
 .dropdown-menu{
   display:none;
+
   position:absolute;
   top:28px;
-  left:-15px;
+  left:-40px;
+
+  width:240px;
+
   background:#111;
-  min-width:190px;
-  padding:10px;
-  border-radius:10px;
-  box-shadow:0 8px 20px rgba(0,0,0,.35);
-}
+  border:1px solid rgba(212,175,55,.35);
+  border-radius:14px;
 
-.dropdown-menu a{
-  display:block;
   padding:12px;
-  color:white;
-  text-decoration:none;
-  border-radius:6px;
-}
 
-.dropdown-menu a:hover{
-  background:#222;
-  color:#ff4f81;
+  box-shadow:0 18px 45px rgba(0,0,0,.45);
 }
 
 .dropdown:hover .dropdown-menu{
   display:block;
 }
 
-/* Hero */
+.dropdown-title{
+  color:var(--gold2);
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  padding:9px 12px;
+}
+
+.dropdown-menu a{
+  display:block;
+
+  color:#eee;
+  text-decoration:none;
+
+  padding:12px;
+
+  border-radius:8px;
+
+  font-size:14px;
+}
+
+.dropdown-menu a:hover{
+  background:#222;
+  color:var(--gold2);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero{
-  padding:90px 6%;
+  min-height:570px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
   text-align:center;
-  background:linear-gradient(135deg,#111,#292929);
+
+  padding:80px 20px;
+
   color:white;
+
+  background:
+  radial-gradient(circle at 50% 0%,#3d3215 0%,#181818 35%,#080808 75%);
+}
+
+.hero-content{
+  max-width:850px;
+}
+
+.hero-label{
+  color:var(--gold2);
+
+  font-size:12px;
+  font-weight:bold;
+
+  letter-spacing:4px;
+  text-transform:uppercase;
+
+  margin-bottom:20px;
 }
 
 .hero h1{
-  font-size:48px;
-  margin-bottom:15px;
+  font-size:58px;
+  line-height:1.05;
+
+  margin-bottom:22px;
+}
+
+.hero h1 span{
+  color:var(--gold);
 }
 
 .hero p{
-  color:#ccc;
+  max-width:650px;
+
+  margin:auto;
+
+  color:#cfcfcf;
+
   font-size:18px;
-  margin-bottom:25px;
+  line-height:1.7;
+}
+
+.hero-buttons{
+  margin-top:32px;
 }
 
 .btn{
   display:inline-block;
-  background:#ff4f81;
-  color:white;
-  padding:13px 24px;
+
+  padding:14px 28px;
+  margin:5px;
+
   border-radius:30px;
+
   text-decoration:none;
+
   font-weight:bold;
-}
 
-/* Sections */
-
-.section{
-  padding:60px 6%;
-}
-
-.section-title{
-  text-align:center;
-  font-size:30px;
-  margin-bottom:35px;
-}
-
-/* Categories */
-
-.categories{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-}
-
-.category{
-  background:white;
-  padding:30px 20px;
-  border-radius:15px;
-  text-align:center;
-  box-shadow:0 5px 18px rgba(0,0,0,.08);
-  text-decoration:none;
-  color:#111;
   transition:.3s;
 }
 
-.category:hover{
-  transform:translateY(-5px);
+.btn-gold{
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#111;
 }
 
-.category-icon{
-  font-size:45px;
+.btn-outline{
+  color:white;
+  border:1px solid #777;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+}
+
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+.section{
+  padding:75px 6%;
+}
+
+.dark-section{
+  background:#0d0d0d;
+  color:white;
+}
+
+.heading{
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.heading small{
+  color:#a57d19;
+
+  text-transform:uppercase;
+  letter-spacing:3px;
+
+  font-size:11px;
+  font-weight:bold;
+}
+
+.heading h2{
+  font-size:36px;
+  margin-top:8px;
+}
+
+.heading p{
+  color:#777;
+  margin-top:10px;
+}
+
+.dark-section .heading p{
+  color:#999;
+}
+
+
+/* =====================================================
+   FASHION FOLDERS
+===================================================== */
+
+.fashion-grid{
+  max-width:1050px;
+
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+
+  gap:28px;
+}
+
+.fashion-folder{
+  min-height:330px;
+
+  position:relative;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+
+  padding:38px;
+
+  color:white;
+  text-decoration:none;
+
+  border-radius:22px;
+
+  overflow:hidden;
+
+  border:1px solid rgba(212,175,55,.35);
+
+  box-shadow:0 15px 40px rgba(0,0,0,.14);
+
+  transition:.35s;
+}
+
+.fashion-folder:hover{
+  transform:translateY(-8px);
+  border-color:var(--gold);
+}
+
+.men-folder{
+  background:
+  linear-gradient(0deg,rgba(0,0,0,.92),rgba(0,0,0,.12)),
+  url("https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?auto=format&fit=crop&w=1200&q=85")
+  center/cover;
+}
+
+.women-folder{
+  background:
+  linear-gradient(0deg,rgba(0,0,0,.92),rgba(0,0,0,.12)),
+  url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=85")
+  center/cover;
+}
+
+.folder-icon{
+  font-size:43px;
   margin-bottom:12px;
 }
 
-/* Products */
+.fashion-folder h3{
+  font-size:28px;
+}
+
+.fashion-folder p{
+  color:#ddd;
+  margin-top:8px;
+}
+
+.folder-link{
+  color:var(--gold2);
+  font-weight:bold;
+  margin-top:17px;
+}
+
+
+/* =====================================================
+   SUB CATEGORIES
+===================================================== */
+
+.subcategories{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+
+  gap:10px;
+
+  margin-bottom:40px;
+}
+
+.subcategory{
+  padding:11px 18px;
+
+  border:1px solid #ddd;
+
+  border-radius:30px;
+
+  background:white;
+
+  color:#333;
+
+  text-decoration:none;
+
+  font-size:13px;
+  font-weight:bold;
+}
+
+.subcategory:hover{
+  background:#111;
+  color:var(--gold2);
+}
+
+
+/* =====================================================
+   PRODUCT GRID
+===================================================== */
 
 .products{
   display:grid;
+
   grid-template-columns:repeat(4,1fr);
-  gap:20px;
+
+  gap:22px;
 }
 
 .product{
   background:white;
-  border-radius:15px;
+
+  border-radius:16px;
+
   overflow:hidden;
-  box-shadow:0 5px 18px rgba(0,0,0,.08);
+
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+  transition:.3s;
 }
 
-.product img{
+.product:hover{
+  transform:translateY(-6px);
+
+  box-shadow:0 16px 35px rgba(0,0,0,.14);
+}
+
+.product-image{
+  height:255px;
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+.product-image img{
   width:100%;
-  height:230px;
+  height:100%;
+
   object-fit:cover;
+
+  transition:.4s;
+}
+
+.product:hover .product-image img{
+  transform:scale(1.05);
+}
+
+.badge{
+  position:absolute;
+
+  top:12px;
+  left:12px;
+
+  z-index:2;
+
+  padding:6px 10px;
+
+  background:#111;
+  color:var(--gold2);
+
+  border-radius:20px;
+
+  font-size:10px;
+  font-weight:bold;
 }
 
 .product-info{
   padding:18px;
 }
 
-.product h3{
-  font-size:17px;
-  margin-bottom:8px;
+.category-name{
+  color:#999;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.product-info h3{
+  font-size:16px;
+
+  margin:7px 0;
+}
+
+.stars{
+  color:#d19e19;
+  letter-spacing:1px;
+
+  font-size:13px;
 }
 
 .price{
   font-size:20px;
-  font-weight:bold;
-  margin:8px 0;
+  font-weight:800;
+
+  margin-top:9px;
 }
 
-.check-btn{
-  display:inline-block;
-  margin-top:10px;
-  background:#111;
-  color:white;
-  padding:10px 16px;
-  border-radius:20px;
+.old-price{
+  color:#aaa;
+  text-decoration:line-through;
+
+  font-size:13px;
+
+  margin-left:5px;
+}
+
+.deal-btn{
+  display:block;
+
+  margin-top:14px;
+
+  padding:11px;
+
+  text-align:center;
+
   text-decoration:none;
-  font-size:14px;
-}
 
-/* Why */
+  border-radius:8px;
 
-.why{
   background:#111;
   color:white;
+
+  font-size:13px;
+  font-weight:bold;
 }
+
+.deal-btn:hover{
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#111;
+}
+
+
+/* =====================================================
+   CUSTOMER REVIEWS
+===================================================== */
+
+.review-area{
+  margin-top:16px;
+
+  padding-top:15px;
+
+  border-top:1px solid #eee;
+}
+
+.review-title{
+  font-size:12px;
+  font-weight:bold;
+
+  margin-bottom:8px;
+}
+
+.rating-input{
+  display:flex;
+  flex-direction:row-reverse;
+  justify-content:flex-end;
+
+  gap:2px;
+
+  margin-bottom:10px;
+}
+
+.rating-input input{
+  display:none;
+}
+
+.rating-input label{
+  cursor:pointer;
+
+  color:#ccc;
+
+  font-size:22px;
+}
+
+.rating-input label:hover,
+.rating-input label:hover ~ label,
+.rating-input input:checked ~ label{
+  color:#d19e19;
+}
+
+.comment-box{
+  width:100%;
+
+  min-height:65px;
+
+  resize:vertical;
+
+  border:1px solid #ddd;
+
+  border-radius:8px;
+
+  padding:9px;
+
+  outline:none;
+
+  font-size:12px;
+}
+
+.comment-box:focus{
+  border-color:var(--gold);
+}
+
+.review-submit{
+  width:100%;
+
+  margin-top:7px;
+
+  padding:9px;
+
+  border:0;
+
+  border-radius:8px;
+
+  cursor:pointer;
+
+  background:#111;
+
+  color:white;
+
+  font-size:12px;
+
+  font-weight:bold;
+}
+
+.review-submit:hover{
+  background:var(--gold);
+  color:#111;
+}
+
+.review-message{
+  margin-top:7px;
+
+  font-size:11px;
+
+  color:#777;
+}
+
+
+/* =====================================================
+   WHY TRENDNEST
+===================================================== */
 
 .why-grid{
   display:grid;
+
   grid-template-columns:repeat(3,1fr);
+
   gap:20px;
 }
 
 .why-card{
-  background:#1d1d1d;
-  padding:30px;
-  border-radius:15px;
+  background:white;
+
+  padding:32px;
+
+  border-radius:16px;
+
   text-align:center;
+
+  border:1px solid #eee;
+}
+
+.why-icon{
+  font-size:34px;
+  margin-bottom:12px;
 }
 
 .why-card h3{
-  margin-bottom:10px;
+  margin-bottom:8px;
 }
 
-/* Social */
+.why-card p{
+  color:#777;
+  font-size:14px;
+}
+
+
+/* =====================================================
+   SOCIAL
+===================================================== */
 
 .social{
   text-align:center;
+
+  background:#eeeade;
 }
 
-.social a{
+.social-buttons{
+  margin-top:25px;
+}
+
+.social-buttons a{
   display:inline-block;
-  margin:8px;
+
   padding:12px 20px;
-  border-radius:25px;
+
+  margin:5px;
+
   background:#111;
+
   color:white;
+
   text-decoration:none;
+
+  border-radius:25px;
+
+  font-size:13px;
 }
 
-/* Footer */
+.social-buttons a:hover{
+  background:var(--gold);
+  color:#111;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer{
-  background:#111;
-  color:#aaa;
+  padding:38px 6%;
+
   text-align:center;
-  padding:30px 6%;
-  margin-top:30px;
+
+  background:#080808;
+
+  color:#999;
+}
+
+.footer-logo{
+  color:white;
+
+  font-size:25px;
+  font-weight:bold;
+
+  margin-bottom:10px;
+}
+
+.footer-logo span{
+  color:var(--gold);
 }
 
 .disclosure{
-  font-size:13px;
-  margin-top:12px;
+  max-width:700px;
+
+  margin:12px auto;
+
+  font-size:11px;
+
+  line-height:1.7;
 }
 
-/* Mobile */
 
-@media(max-width:800px){
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:950px){
+
+  .products{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .hero h1{
+    font-size:46px;
+  }
+
+  .why-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:700px){
 
   header{
     flex-direction:column;
-    gap:15px;
+    gap:14px;
   }
 
   nav{
@@ -282,59 +801,68 @@ footer{
     justify-content:center;
   }
 
-  nav a{
-    font-size:13px;
+  nav > a,
+  .dropdown > a{
+    font-size:12px;
   }
 
   .dropdown-menu{
-    left:-40px;
-  }
-
-  .hero h1{
-    font-size:34px;
-  }
-
-  .categories{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .products{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .product img{
-    height:180px;
-  }
-
-  .why-grid{
-    grid-template-columns:1fr;
-  }
-}
-
-@media(max-width:480px){
-
-  .categories{
-    grid-template-columns:1fr;
-  }
-
-  .products{
-    grid-template-columns:1fr;
+    left:-70px;
   }
 
   .hero{
-    padding:65px 20px;
+    min-height:500px;
+  }
+
+  .hero h1{
+    font-size:36px;
+  }
+
+  .hero p{
+    font-size:15px;
+  }
+
+  .fashion-grid{
+    grid-template-columns:1fr;
+  }
+
+  .fashion-folder{
+    min-height:270px;
   }
 
   .section{
-    padding:45px 20px;
+    padding:55px 5%;
   }
+
 }
+
+@media(max-width:450px){
+
+  .products{
+    grid-template-columns:1fr;
+  }
+
+  .product-image{
+    height:280px;
+  }
+
+  .hero h1{
+    font-size:31px;
+  }
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
-<!-- HEADER -->
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header>
 
@@ -346,17 +874,25 @@ footer{
 
     <a href="#home">Home</a>
 
-    <!-- FASHION DROPDOWN -->
-
     <div class="dropdown">
 
-      <a href="#fashion">Fashion ▾</a>
+      <a href="#fashion">
+        Fashion ▾
+      </a>
 
       <div class="dropdown-menu">
 
-        <a href="#mens-wear">👨 Men's Fashion</a>
+        <div class="dropdown-title">
+          Fashion Collection
+        </div>
 
-        <a href="#ladies-wear">👩 Ladies Fashion</a>
+        <a href="#mens-wear">
+          👨 Men's Wear
+        </a>
+
+        <a href="#ladies-wear">
+          👩 Ladies Wear
+        </a>
 
       </div>
 
@@ -373,51 +909,108 @@ footer{
 </header>
 
 
-<!-- HOME -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <section class="hero" id="home">
 
-  <h1>Discover What's Trending ♡</h1>
+  <div class="hero-content">
 
-  <p>
-    Trending products, stylish finds and better deals — all in one place.
-  </p>
+    <div class="hero-label">
+      TrendNest • Curated Finds
+    </div>
 
-  <a href="#fashion" class="btn">
-    Explore Now →
-  </a>
+    <h1>
+      Discover <span>What's Trending</span>
+    </h1>
+
+    <p>
+      Fashion, gadgets, beauty and everyday finds —
+      curated for people who love stylish products and better deals.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a href="#fashion" class="btn btn-gold">
+        Explore Fashion
+      </a>
+
+      <a href="#under499" class="btn btn-outline">
+        Finds Under ₹499
+      </a>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<!-- FASHION -->
+<!-- =====================================================
+     FASHION FOLDERS
+===================================================== -->
 
 <section class="section" id="fashion">
 
-  <h2 class="section-title">
-    👗 Fashion
-  </h2>
+  <div class="heading">
 
-  <div class="categories">
+    <small>Shop By Collection</small>
 
-    <a href="#mens-wear" class="category">
+    <h2>Fashion</h2>
 
-      <div class="category-icon">👨</div>
+    <p>
+      Choose a collection to explore products.
+    </p>
 
-      <h3>Men's Fashion</h3>
+  </div>
 
-      <p>Shirts • T-Shirts • Jeans • Kurtas</p>
+
+  <div class="fashion-grid">
+
+
+    <!-- MEN'S FOLDER -->
+
+    <a href="#mens-wear" class="fashion-folder men-folder">
+
+      <div class="folder-icon">
+        👨
+      </div>
+
+      <h3>
+        Men's Wear
+      </h3>
+
+      <p>
+        T-Shirts • Shirts • Jeans • Kurtas • Footwear
+      </p>
+
+      <div class="folder-link">
+        Open Men's Collection →
+      </div>
 
     </a>
 
 
-    <a href="#ladies-wear" class="category">
+    <!-- LADIES FOLDER -->
 
-      <div class="category-icon">👩</div>
+    <a href="#ladies-wear" class="fashion-folder women-folder">
 
-      <h3>Ladies Fashion</h3>
+      <div class="folder-icon">
+        👩
+      </div>
 
-      <p>Kurtis • Dresses • Sarees • Tops</p>
+      <h3>
+        Ladies Wear
+      </h3>
+
+      <p>
+        Kurtis • Tops • Dresses • Sarees • Footwear
+      </p>
+
+      <div class="folder-link">
+        Open Ladies Collection →
+      </div>
 
     </a>
 
@@ -426,78 +1019,307 @@ footer{
 </section>
 
 
-<!-- MEN'S FASHION -->
+<!-- =====================================================
+     MEN'S WEAR
+===================================================== -->
 
-<section class="section" id="mens-wear">
+<section class="section dark-section" id="mens-wear">
 
-  <h2 class="section-title">
-    👨 Men's Fashion
-  </h2>
+  <div class="heading">
+
+    <small>Men's Collection</small>
+
+    <h2>Men's Wear</h2>
+
+    <p>
+      Explore stylish men's fashion picks.
+    </p>
+
+  </div>
+
+
+  <div class="subcategories">
+
+    <a href="#men-tshirts" class="subcategory">
+      T-Shirts
+    </a>
+
+    <a href="#men-shirts" class="subcategory">
+      Shirts
+    </a>
+
+    <a href="#men-jeans" class="subcategory">
+      Jeans
+    </a>
+
+    <a href="#men-kurtas" class="subcategory">
+      Kurtas
+    </a>
+
+  </div>
+
 
   <div class="products">
 
-    <div class="product">
 
-      <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80">
+    <!-- MEN PRODUCT 1 -->
+
+    <div class="product" id="men-tshirts">
+
+      <div class="product-image">
+
+        <span class="badge">
+          TRENDING
+        </span>
+
+        <img
+        src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=85"
+        alt="Men T Shirt">
+
+      </div>
 
       <div class="product-info">
 
-        <h3>Men's Stylish T-Shirt</h3>
+        <div class="category-name">
+          Men's • T-Shirts
+        </div>
 
-        <div class="price">₹399</div>
+        <h3>
+          Premium Casual T-Shirt
+        </h3>
 
-        <a href="#" class="check-btn">Check Price →</a>
+        <div class="stars">
+          ★★★★★
+        </div>
+
+        <div class="price">
+          ₹399
+          <span class="old-price">
+            ₹799
+          </span>
+        </div>
+
+        <a href="#" class="deal-btn">
+          View Deal →
+        </a>
+
+        <div class="review-area">
+
+          <div class="review-title">
+            Rate this product
+          </div>
+
+          <div class="rating-input">
+
+            <input type="radio" id="m1-5" name="m1-rating" value="5">
+            <label for="m1-5">★</label>
+
+            <input type="radio" id="m1-4" name="m1-rating" value="4">
+            <label for="m1-4">★</label>
+
+            <input type="radio" id="m1-3" name="m1-rating" value="3">
+            <label for="m1-3">★</label>
+
+            <input type="radio" id="m1-2" name="m1-rating" value="2">
+            <label for="m1-2">★</label>
+
+            <input type="radio" id="m1-1" name="m1-rating" value="1">
+            <label for="m1-1">★</label>
+
+          </div>
+
+          <textarea
+          id="m1-comment"
+          class="comment-box"
+          placeholder="Write your comment..."></textarea>
+
+          <button
+          class="review-submit"
+          onclick="submitReview('m1')">
+          Submit Review
+          </button>
+
+          <div id="m1-message" class="review-message"></div>
+
+        </div>
 
       </div>
 
     </div>
 
 
-    <div class="product">
+    <!-- MEN PRODUCT 2 -->
 
-      <img src="https://images.unsplash.com/photo-1603252110481-7ba873bf42ab?auto=format&fit=crop&w=600&q=80">
+    <div class="product" id="men-shirts">
+
+      <div class="product-image">
+
+        <span class="badge">
+          HOT PICK
+        </span>
+
+        <img
+        src="https://images.unsplash.com/photo-1603252110481-7ba873bf42ab?auto=format&fit=crop&w=700&q=85"
+        alt="Men Shirt">
+
+      </div>
 
       <div class="product-info">
 
-        <h3>Men's Casual Shirt</h3>
+        <div class="category-name">
+          Men's • Shirts
+        </div>
 
-        <div class="price">₹599</div>
+        <h3>
+          Classic Casual Shirt
+        </h3>
 
-        <a href="#" class="check-btn">Check Price →</a>
+        <div class="stars">
+          ★★★★★
+        </div>
+
+        <div class="price">
+          ₹599
+          <span class="old-price">
+            ₹999
+          </span>
+        </div>
+
+        <a href="#" class="deal-btn">
+          View Deal →
+        </a>
+
+        <div class="review-area">
+
+          <div class="review-title">
+            Rate this product
+          </div>
+
+          <div class="rating-input">
+
+            <input type="radio" id="m2-5" name="m2-rating" value="5">
+            <label for="m2-5">★</label>
+
+            <input type="radio" id="m2-4" name="m2-rating" value="4">
+            <label for="m2-4">★</label>
+
+            <input type="radio" id="m2-3" name="m2-rating" value="3">
+            <label for="m2-3">★</label>
+
+            <input type="radio" id="m2-2" name="m2-rating" value="2">
+            <label for="m2-2">★</label>
+
+            <input type="radio" id="m2-1" name="m2-rating" value="1">
+            <label for="m2-1">★</label>
+
+          </div>
+
+          <textarea
+          id="m2-comment"
+          class="comment-box"
+          placeholder="Write your comment..."></textarea>
+
+          <button
+          class="review-submit"
+          onclick="submitReview('m2')">
+          Submit Review
+          </button>
+
+          <div id="m2-message" class="review-message"></div>
+
+        </div>
 
       </div>
 
     </div>
 
 
-    <div class="product">
+    <!-- MEN PRODUCT 3 -->
 
-      <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=600&q=80">
+    <div class="product" id="men-jeans">
+
+      <div class="product-image">
+
+        <span class="badge">
+          DEAL
+        </span>
+
+        <img
+        src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=700&q=85"
+        alt="Men Jeans">
+
+      </div>
 
       <div class="product-info">
 
-        <h3>Men's Casual Jeans</h3>
+        <div class="category-name">
+          Men's • Jeans
+        </div>
 
-        <div class="price">₹799</div>
+        <h3>
+          Classic Blue Jeans
+        </h3>
 
-        <a href="#" class="check-btn">Check Price →</a>
+        <div class="stars">
+          ★★★★★
+        </div>
+
+        <div class="price">
+          ₹799
+          <span class="old-price">
+            ₹1299
+          </span>
+        </div>
+
+        <a href="#" class="deal-btn">
+          View Deal →
+        </a>
 
       </div>
 
     </div>
 
 
-    <div class="product">
+    <!-- MEN PRODUCT 4 -->
 
-      <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=600&q=80">
+    <div class="product" id="men-kurtas">
+
+      <div class="product-image">
+
+        <span class="badge">
+          NEW
+        </span>
+
+        <img
+        src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=700&q=85"
+        alt="Men Kurta">
+
+      </div>
 
       <div class="product-info">
 
-        <h3>Men's Premium Shirt</h3>
+        <div class="category-name">
+          Men's • Kurtas
+        </div>
 
-        <div class="price">₹699</div>
+        <h3>
+          Premium Festive Kurta
+        </h3>
 
-        <a href="#" class="check-btn">Check Price →</a>
+        <div class="stars">
+          ★★★★★
+        </div>
+
+        <div class="price">
+          ₹899
+          <span class="old-price">
+            ₹1499
+          </span>
+        </div>
+
+        <a href="#" class="deal-btn">
+          View Deal →
+        </a>
 
       </div>
 
@@ -508,78 +1330,267 @@ footer{
 </section>
 
 
-<!-- LADIES FASHION -->
+<!-- =====================================================
+     LADIES WEAR
+===================================================== -->
 
 <section class="section" id="ladies-wear">
 
-  <h2 class="section-title">
-    👩 Ladies Fashion
-  </h2>
+  <div class="heading">
+
+    <small>Ladies Collection</small>
+
+    <h2>Ladies Wear</h2>
+
+    <p>
+      Explore stylish women's fashion picks.
+    </p>
+
+  </div>
+
+
+  <div class="subcategories">
+
+    <a href="#ladies-kurtis" class="subcategory">
+      Kurtis
+    </a>
+
+    <a href="#ladies-tops" class="subcategory">
+      Tops
+    </a>
+
+    <a href="#ladies-dresses" class="subcategory">
+      Dresses
+    </a>
+
+    <a href="#ladies-sarees" class="subcategory">
+      Sarees
+    </a>
+
+  </div>
+
 
   <div class="products">
 
-    <div class="product">
 
-      <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=600&q=80">
+    <!-- LADIES PRODUCT 1 -->
+
+    <div class="product" id="ladies-kurtis">
+
+      <div class="product-image">
+
+        <span class="badge">
+          TRENDING
+        </span>
+
+        <img
+        src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=700&q=85"
+        alt="Ladies Kurti">
+
+      </div>
 
       <div class="product-info">
 
-        <h3>Women's Stylish Top</h3>
+        <div class="category-name">
+          Ladies • Kurtis
+        </div>
 
-        <div class="price">₹399</div>
+        <h3>
+          Elegant Daily Kurti
+        </h3>
 
-        <a href="#" class="check-btn">Check Price →</a>
+        <div class="stars">
+          ★★★★★
+        </div>
+
+        <div class="price">
+          ₹499
+          <span class="old-price">
+            ₹899
+          </span>
+        </div>
+
+        <a href="#" class="deal-btn">
+          View Deal →
+        </a>
+
+        <div class="review-area">
+
+          <div class="review-title">
+            Rate this product
+          </div>
+
+          <div class="rating-input">
+
+            <input type="radio" id="l1-5" name="l1-rating" value="5">
+            <label for="l1-5">★</label>
+
+            <input type="radio" id="l1-4" name="l1-rating" value="4">
+            <label for="l1-4">★</label>
+
+            <input type="radio" id="l1-3" name="l1-rating" value="3">
+            <label for="l1-3">★</label>
+
+            <input type="radio" id="l1-2" name="l1-rating" value="2">
+            <label for="l1-2">★</label>
+
+            <input type="radio" id="l1-1" name="l1-rating" value="1">
+            <label for="l1-1">★</label>
+
+          </div>
+
+          <textarea
+          id="l1-comment"
+          class="comment-box"
+          placeholder="Write your comment..."></textarea>
+
+          <button
+          class="review-submit"
+          onclick="submitReview('l1')">
+          Submit Review
+          </button>
+
+          <div id="l1-message" class="review-message"></div>
+
+        </div>
 
       </div>
 
     </div>
 
 
-    <div class="product">
+    <!-- LADIES PRODUCT 2 -->
 
-      <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=600&q=80">
+    <div class="product" id="ladies-tops">
+
+      <div class="product-image">
+
+        <span class="badge">
+          HOT
+        </span>
+
+        <img
+        src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=700&q=85"
+        alt="Ladies Top">
+
+      </div>
 
       <div class="product-info">
 
-        <h3>Women's Kurti</h3>
+        <div class="category-name">
+          Ladies • Tops
+        </div>
 
-        <div class="price">₹499</div>
+        <h3>
+          Stylish Casual Top
+        </h3>
 
-        <a href="#" class="check-btn">Check Price →</a>
+        <div class="stars">
+          ★★★★★
+        </div>
+
+        <div class="price">
+          ₹399
+          <span class="old-price">
+            ₹699
+          </span>
+        </div>
+
+        <a href="#" class="deal-btn">
+          View Deal →
+        </a>
 
       </div>
 
     </div>
 
 
-    <div class="product">
+    <!-- LADIES PRODUCT 3 -->
 
-      <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=600&q=80">
+    <div class="product" id="ladies-dresses">
+
+      <div class="product-image">
+
+        <span class="badge">
+          NEW
+        </span>
+
+        <img
+        src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=700&q=85"
+        alt="Ladies Dress">
+
+      </div>
 
       <div class="product-info">
 
-        <h3>Women's Dress</h3>
+        <div class="category-name">
+          Ladies • Dresses
+        </div>
 
-        <div class="price">₹699</div>
+        <h3>
+          Elegant Party Dress
+        </h3>
 
-        <a href="#" class="check-btn">Check Price →</a>
+        <div class="stars">
+          ★★★★★
+        </div>
+
+        <div class="price">
+          ₹699
+          <span class="old-price">
+            ₹1199
+          </span>
+        </div>
+
+        <a href="#" class="deal-btn">
+          View Deal →
+        </a>
 
       </div>
 
     </div>
 
 
-    <div class="product">
+    <!-- LADIES PRODUCT 4 -->
 
-      <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=600&q=80">
+    <div class="product" id="ladies-sarees">
+
+      <div class="product-image">
+
+        <span class="badge">
+          PREMIUM
+        </span>
+
+        <img
+        src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=700&q=85"
+        alt="Ladies Saree">
+
+      </div>
 
       <div class="product-info">
 
-        <h3>Women's Saree</h3>
+        <div class="category-name">
+          Ladies • Sarees
+        </div>
 
-        <div class="price">₹799</div>
+        <h3>
+          Premium Festive Saree
+        </h3>
 
-        <a href="#" class="check-btn">Check Price →</a>
+        <div class="stars">
+          ★★★★★
+        </div>
+
+        <div class="price">
+          ₹799
+          <span class="old-price">
+            ₹1399
+          </span>
+        </div>
+
+        <a href="#" class="deal-btn">
+          View Deal →
+        </a>
 
       </div>
 
@@ -590,27 +1601,59 @@ footer{
 </section>
 
 
-<!-- GADGETS -->
+<!-- =====================================================
+     GADGETS
+===================================================== -->
 
-<section class="section" id="gadgets">
+<section class="section dark-section" id="gadgets">
 
-  <h2 class="section-title">
-    📱 Gadget Finds
-  </h2>
+  <div class="heading">
+
+    <small>Smart Finds</small>
+
+    <h2>Gadgets</h2>
+
+    <p>
+      Useful tech products and everyday gadgets.
+    </p>
+
+  </div>
+
 
   <div class="products">
 
+
     <div class="product">
 
-      <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80">
+      <div class="product-image">
+
+        <span class="badge">
+          HOT
+        </span>
+
+        <img
+        src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=700&q=85"
+        alt="Headphones">
+
+      </div>
 
       <div class="product-info">
 
-        <h3>Wireless Headphones</h3>
+        <div class="category-name">
+          Audio
+        </div>
 
-        <div class="price">₹999</div>
+        <h3>
+          Wireless Headphones
+        </h3>
 
-        <a href="#" class="check-btn">Check Price →</a>
+        <div class="price">
+          ₹999
+        </div>
+
+        <a href="#" class="deal-btn">
+          View Deal →
+        </a>
 
       </div>
 
@@ -619,15 +1662,35 @@ footer{
 
     <div class="product">
 
-      <img src="https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=600&q=80">
+      <div class="product-image">
+
+        <span class="badge">
+          TRENDING
+        </span>
+
+        <img
+        src="https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=700&q=85"
+        alt="Earbuds">
+
+      </div>
 
       <div class="product-info">
 
-        <h3>Wireless Earbuds</h3>
+        <div class="category-name">
+          Audio
+        </div>
 
-        <div class="price">₹799</div>
+        <h3>
+          Wireless Earbuds
+        </h3>
 
-        <a href="#" class="check-btn">Check Price →</a>
+        <div class="price">
+          ₹799
+        </div>
+
+        <a href="#" class="deal-btn">
+          View Deal →
+        </a>
 
       </div>
 
@@ -636,15 +1699,35 @@ footer{
 
     <div class="product">
 
-      <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80">
+      <div class="product-image">
+
+        <span class="badge">
+          DEAL
+        </span>
+
+        <img
+        src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=85"
+        alt="Smart Watch">
+
+      </div>
 
       <div class="product-info">
 
-        <h3>Smart Watch</h3>
+        <div class="category-name">
+          Wearables
+        </div>
 
-        <div class="price">₹999</div>
+        <h3>
+          Smart Watch
+        </h3>
 
-        <a href="#" class="check-btn">Check Price →</a>
+        <div class="price">
+          ₹999
+        </div>
+
+        <a href="#" class="deal-btn">
+          View Deal →
+        </a>
 
       </div>
 
@@ -655,27 +1738,55 @@ footer{
 </section>
 
 
-<!-- BEAUTY -->
+<!-- =====================================================
+     BEAUTY
+===================================================== -->
 
 <section class="section" id="beauty">
 
-  <h2 class="section-title">
-    💄 Beauty & Lifestyle
-  </h2>
+  <div class="heading">
+
+    <small>Self Care</small>
+
+    <h2>Beauty & Lifestyle</h2>
+
+    <p>
+      Popular beauty and lifestyle finds.
+    </p>
+
+  </div>
+
 
   <div class="products">
 
+
     <div class="product">
 
-      <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=600&q=80">
+      <div class="product-image">
+
+        <img
+        src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=700&q=85"
+        alt="Beauty">
+
+      </div>
 
       <div class="product-info">
 
-        <h3>Beauty Essentials</h3>
+        <div class="category-name">
+          Beauty
+        </div>
 
-        <div class="price">₹299</div>
+        <h3>
+          Beauty Essentials
+        </h3>
 
-        <a href="#" class="check-btn">Check Price →</a>
+        <div class="price">
+          ₹299
+        </div>
+
+        <a href="#" class="deal-btn">
+          View Deal →
+        </a>
 
       </div>
 
@@ -684,15 +1795,31 @@ footer{
 
     <div class="product">
 
-      <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=600&q=80">
+      <div class="product-image">
+
+        <img
+        src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=700&q=85"
+        alt="Skincare">
+
+      </div>
 
       <div class="product-info">
 
-        <h3>Skincare Essentials</h3>
+        <div class="category-name">
+          Skincare
+        </div>
 
-        <div class="price">₹399</div>
+        <h3>
+          Skincare Essentials
+        </h3>
 
-        <a href="#" class="check-btn">Check Price →</a>
+        <div class="price">
+          ₹399
+        </div>
+
+        <a href="#" class="deal-btn">
+          View Deal →
+        </a>
 
       </div>
 
@@ -703,27 +1830,59 @@ footer{
 </section>
 
 
-<!-- UNDER 499 -->
+<!-- =====================================================
+     UNDER 499
+===================================================== -->
 
-<section class="section" id="under499">
+<section class="section dark-section" id="under499">
 
-  <h2 class="section-title">
-    🔥 Best Finds Under ₹499
-  </h2>
+  <div class="heading">
+
+    <small>Budget Collection</small>
+
+    <h2>Best Finds Under ₹499</h2>
+
+    <p>
+      Trendy picks at budget-friendly prices.
+    </p>
+
+  </div>
+
 
   <div class="products">
 
+
     <div class="product">
 
-      <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=600&q=80">
+      <div class="product-image">
+
+        <span class="badge">
+          UNDER ₹499
+        </span>
+
+        <img
+        src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=700&q=85"
+        alt="Fashion">
+
+      </div>
 
       <div class="product-info">
 
-        <h3>Trending Fashion Pick</h3>
+        <div class="category-name">
+          Fashion
+        </div>
 
-        <div class="price">Under ₹499</div>
+        <h3>
+          Trending Fashion Pick
+        </h3>
 
-        <a href="#" class="check-btn">Check Price →</a>
+        <div class="price">
+          ₹399
+        </div>
+
+        <a href="#" class="deal-btn">
+          View Deal →
+        </a>
 
       </div>
 
@@ -732,15 +1891,35 @@ footer{
 
     <div class="product">
 
-      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80">
+      <div class="product-image">
+
+        <span class="badge">
+          UNDER ₹499
+        </span>
+
+        <img
+        src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=85"
+        alt="Shoes">
+
+      </div>
 
       <div class="product-info">
 
-        <h3>Trending Shoes</h3>
+        <div class="category-name">
+          Footwear
+        </div>
 
-        <div class="price">Under ₹499</div>
+        <h3>
+          Trending Shoes
+        </h3>
 
-        <a href="#" class="check-btn">Check Price →</a>
+        <div class="price">
+          ₹449
+        </div>
+
+        <a href="#" class="deal-btn">
+          View Deal →
+        </a>
 
       </div>
 
@@ -751,37 +1930,74 @@ footer{
 </section>
 
 
-<!-- WHY TRENDNEST -->
+<!-- =====================================================
+     WHY TRENDNEST
+===================================================== -->
 
-<section class="section why">
+<section class="section">
 
-  <h2 class="section-title">
-    Why TrendNest?
-  </h2>
+  <div class="heading">
+
+    <small>Why Us</small>
+
+    <h2>Why TrendNest?</h2>
+
+  </div>
+
 
   <div class="why-grid">
 
+
     <div class="why-card">
 
-      <h3>🔥 Trending</h3>
+      <div class="why-icon">
+        ✨
+      </div>
 
-      <p>Discover products people are talking about.</p>
+      <h3>
+        Curated Finds
+      </h3>
+
+      <p>
+        Discover products selected for style,
+        usefulness and value.
+      </p>
 
     </div>
 
+
     <div class="why-card">
 
-      <h3>💰 Better Deals</h3>
+      <div class="why-icon">
+        💰
+      </div>
 
-      <p>Find useful products at attractive prices.</p>
+      <h3>
+        Better Deals
+      </h3>
+
+      <p>
+        Find interesting products without
+        searching across multiple places.
+      </p>
 
     </div>
 
+
     <div class="why-card">
 
-      <h3>✨ Easy Shopping</h3>
+      <div class="why-icon">
+        🔥
+      </div>
 
-      <p>Explore products and check deals easily.</p>
+      <h3>
+        Trending Products
+      </h3>
+
+      <p>
+        Explore popular fashion, gadgets
+        and lifestyle products.
+      </p>
 
     </div>
 
@@ -790,40 +2006,135 @@ footer{
 </section>
 
 
-<!-- SOCIAL -->
+<!-- =====================================================
+     SOCIAL MEDIA
+===================================================== -->
 
 <section class="section social">
 
-  <h2 class="section-title">
-    Follow TrendNest
-  </h2>
+  <div class="heading">
 
-  <a href="#" target="_blank">📸 Instagram</a>
+    <small>Stay Connected</small>
 
-  <a href="#" target="_blank">📌 Pinterest</a>
+    <h2>Follow TrendNest</h2>
 
-  <a href="#" target="_blank">📘 Facebook</a>
+    <p>
+      Follow us for new finds, deals and trending products.
+    </p>
 
-  <a href="#" target="_blank">✈️ Telegram</a>
+  </div>
+
+
+  <div class="social-buttons">
+
+    <a href="#" target="_blank">
+      📸 Instagram
+    </a>
+
+    <a href="#" target="_blank">
+      📌 Pinterest
+    </a>
+
+    <a href="#" target="_blank">
+      📘 Facebook
+    </a>
+
+    <a href="#" target="_blank">
+      ✈️ Telegram
+    </a>
+
+  </div>
 
 </section>
 
 
-<!-- FOOTER -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
-  <div>
-    © 2026 TrendNest. All Rights Reserved.
+  <div class="footer-logo">
+    Trend<span>Nest</span>
   </div>
 
-  <div class="disclosure">
-    Some links on TrendNest may be affiliate links.
-    We may earn a commission from eligible purchases
-    at no additional cost to you.
-  </div>
+  <p>
+    Discover What's Trending.
+  </p>
+
+
+  <p style="margin-top:15px;font-size:11px;">
+    © 2026 TrendNest. All Rights Reserved.
+  </p>
 
 </footer>
+
+
+<!-- =====================================================
+     REVIEW JAVASCRIPT
+===================================================== -->
+
+<script>
+
+function submitReview(productId){
+
+  const selected =
+    document.querySelector(
+      'input[name="' + productId + '-rating"]:checked'
+    );
+
+  const comment =
+    document.getElementById(
+      productId + '-comment'
+    ).value.trim();
+
+  const message =
+    document.getElementById(
+      productId + '-message'
+    );
+
+
+  if(!selected){
+
+    message.innerText =
+      "Please select a rating from 1 to 5 stars.";
+
+    return;
+  }
+
+
+  const rating = selected.value;
+
+
+  const review = {
+
+    rating:rating,
+
+    comment:comment,
+
+    date:new Date().toLocaleDateString()
+
+  };
+
+
+  localStorage.setItem(
+
+    "trendnest-review-" + productId,
+
+    JSON.stringify(review)
+
+  );
+
+
+  message.innerText =
+    "✓ Thank you! Your " +
+    rating +
+    "-star rating has been saved.";
+
+}
+
+</script>
+
 
 </body>
 </html>
