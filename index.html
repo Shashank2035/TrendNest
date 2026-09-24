@@ -1,239 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>TrendNest | Trending Fashion & Better Finds</title>
+<title>TrendNest | Trending Products & Best Deals</title>
 
 <style>
-
-/* =====================================================
-   TRENDNEST LUXURY DESIGN SYSTEM
-===================================================== */
-
 :root{
-  --black:#090909;
+  --black:#080808;
   --black2:#121212;
-  --black3:#1b1b1b;
   --gold:#d4af37;
-  --gold2:#f3d77a;
-  --cream:#f7f3e8;
+  --gold2:#f1d77a;
+  --cream:#f7f2e7;
   --white:#ffffff;
-  --text:#171717;
-  --muted:#777;
-  --border:#e8e2d3;
+  --gray:#777;
+  --light:#f6f5f1;
+  --border:#e5dfcf;
 }
 
 *{
-  box-sizing:border-box;
   margin:0;
   padding:0;
-}
-
-html{
+  box-sizing:border-box;
   scroll-behavior:smooth;
 }
 
 body{
   font-family:Arial,Helvetica,sans-serif;
-  background:#f7f6f2;
-  color:var(--text);
-  line-height:1.5;
+  background:var(--light);
+  color:#171717;
 }
 
-button,
-input,
-textarea{
-  font-family:inherit;
-}
-
-
-/* =====================================================
-   HEADER
-===================================================== */
+/* ================= HEADER ================= */
 
 header{
   position:sticky;
   top:0;
-  z-index:9999;
+  z-index:1000;
+  background:rgba(8,8,8,.97);
+  box-shadow:0 4px 20px rgba(0,0,0,.25);
+}
 
+.header{
+  max-width:1200px;
+  margin:auto;
+  padding:16px 20px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-
-  padding:17px 6%;
-
-  background:rgba(9,9,9,.97);
-  border-bottom:1px solid rgba(212,175,55,.25);
-  backdrop-filter:blur(12px);
+  gap:20px;
 }
 
 .logo{
-  color:white;
-  font-size:29px;
+  color:var(--gold2);
+  font-size:27px;
   font-weight:800;
+  text-decoration:none;
   letter-spacing:.5px;
 }
 
 .logo span{
-  color:var(--gold);
+  color:white;
 }
 
 nav{
   display:flex;
   align-items:center;
-  gap:25px;
+  gap:22px;
 }
 
-nav > a,
-.dropdown > a{
-  color:#fff;
+nav a{
+  color:white;
   text-decoration:none;
   font-size:14px;
   font-weight:600;
-  transition:.25s;
+  transition:.3s;
 }
 
-nav > a:hover,
-.dropdown > a:hover{
+nav a:hover{
   color:var(--gold2);
 }
 
-
-/* =====================================================
-   FASHION DROPDOWN
-===================================================== */
+/* Dropdown */
 
 .dropdown{
   position:relative;
 }
 
-.dropdown-menu{
-  display:none;
+.dropdown>a{
+  cursor:pointer;
+}
 
+.dropdown-menu{
   position:absolute;
   top:28px;
-  left:-40px;
-
-  width:240px;
-
+  left:-15px;
+  min-width:220px;
   background:#111;
-  border:1px solid rgba(212,175,55,.35);
-  border-radius:14px;
-
-  padding:12px;
-
-  box-shadow:0 18px 45px rgba(0,0,0,.45);
+  border:1px solid #333;
+  border-radius:12px;
+  padding:10px;
+  display:none;
+  box-shadow:0 15px 35px rgba(0,0,0,.35);
 }
 
 .dropdown:hover .dropdown-menu{
   display:block;
 }
 
-.dropdown-title{
-  color:var(--gold2);
-  font-size:10px;
-  text-transform:uppercase;
-  letter-spacing:2px;
-  padding:9px 12px;
-}
-
 .dropdown-menu a{
   display:block;
-
-  color:#eee;
-  text-decoration:none;
-
-  padding:12px;
-
+  padding:11px 12px;
   border-radius:8px;
-
-  font-size:14px;
 }
 
 .dropdown-menu a:hover{
   background:#222;
-  color:var(--gold2);
 }
 
-
-/* =====================================================
-   HERO
-===================================================== */
+/* ================= HERO ================= */
 
 .hero{
-  min-height:570px;
-
+  min-height:520px;
+  background:
+  linear-gradient(rgba(0,0,0,.68),rgba(0,0,0,.72)),
+  radial-gradient(circle at top right,#66551d,#090909 55%);
+  color:white;
   display:flex;
   align-items:center;
   justify-content:center;
-
   text-align:center;
-
   padding:80px 20px;
-
-  color:white;
-
-  background:
-  radial-gradient(circle at 50% 0%,#3d3215 0%,#181818 35%,#080808 75%);
 }
 
 .hero-content{
   max-width:850px;
 }
 
-.hero-label{
+.hero small{
   color:var(--gold2);
-
-  font-size:12px;
-  font-weight:bold;
-
   letter-spacing:4px;
-  text-transform:uppercase;
-
-  margin-bottom:20px;
+  font-weight:bold;
 }
 
 .hero h1{
   font-size:58px;
-  line-height:1.05;
-
-  margin-bottom:22px;
+  margin:20px 0 15px;
 }
 
 .hero h1 span{
-  color:var(--gold);
+  color:var(--gold2);
 }
 
 .hero p{
-  max-width:650px;
-
-  margin:auto;
-
-  color:#cfcfcf;
-
+  color:#ddd;
   font-size:18px;
   line-height:1.7;
+  max-width:700px;
+  margin:auto;
 }
 
 .hero-buttons{
-  margin-top:32px;
+  margin-top:30px;
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
 }
 
 .btn{
   display:inline-block;
-
-  padding:14px 28px;
-  margin:5px;
-
+  padding:14px 25px;
   border-radius:30px;
-
   text-decoration:none;
-
   font-weight:bold;
-
   transition:.3s;
 }
 
@@ -242,692 +183,634 @@ nav > a:hover,
   color:#111;
 }
 
-.btn-outline{
-  color:white;
+.btn-dark{
   border:1px solid #777;
+  color:white;
 }
 
 .btn:hover{
   transform:translateY(-3px);
 }
 
+/* ================= COMMON ================= */
 
-/* =====================================================
-   SECTIONS
-===================================================== */
-
-.section{
-  padding:75px 6%;
+section{
+  padding:70px 5%;
 }
 
-.dark-section{
-  background:#0d0d0d;
-  color:white;
-}
-
-.heading{
-  text-align:center;
-  margin-bottom:45px;
-}
-
-.heading small{
-  color:#a57d19;
-
-  text-transform:uppercase;
-  letter-spacing:3px;
-
-  font-size:11px;
-  font-weight:bold;
-}
-
-.heading h2{
-  font-size:36px;
-  margin-top:8px;
-}
-
-.heading p{
-  color:#777;
-  margin-top:10px;
-}
-
-.dark-section .heading p{
-  color:#999;
-}
-
-
-/* =====================================================
-   FASHION FOLDERS
-===================================================== */
-
-.fashion-grid{
-  max-width:1050px;
-
+.container{
+  max-width:1200px;
   margin:auto;
-
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-
-  gap:28px;
 }
 
-.fashion-folder{
-  min-height:330px;
-
-  position:relative;
-
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-
-  padding:38px;
-
-  color:white;
-  text-decoration:none;
-
-  border-radius:22px;
-
-  overflow:hidden;
-
-  border:1px solid rgba(212,175,55,.35);
-
-  box-shadow:0 15px 40px rgba(0,0,0,.14);
-
-  transition:.35s;
-}
-
-.fashion-folder:hover{
-  transform:translateY(-8px);
-  border-color:var(--gold);
-}
-
-.men-folder{
-  background:
-  linear-gradient(0deg,rgba(0,0,0,.92),rgba(0,0,0,.12)),
-  url("https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?auto=format&fit=crop&w=1200&q=85")
-  center/cover;
-}
-
-.women-folder{
-  background:
-  linear-gradient(0deg,rgba(0,0,0,.92),rgba(0,0,0,.12)),
-  url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=85")
-  center/cover;
-}
-
-.folder-icon{
-  font-size:43px;
-  margin-bottom:12px;
-}
-
-.fashion-folder h3{
-  font-size:28px;
-}
-
-.fashion-folder p{
-  color:#ddd;
-  margin-top:8px;
-}
-
-.folder-link{
-  color:var(--gold2);
-  font-weight:bold;
-  margin-top:17px;
-}
-
-
-/* =====================================================
-   SUB CATEGORIES
-===================================================== */
-
-.subcategories{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-
-  gap:10px;
-
+.section-title{
+  text-align:center;
   margin-bottom:40px;
 }
 
-.subcategory{
-  padding:11px 18px;
-
-  border:1px solid #ddd;
-
-  border-radius:30px;
-
-  background:white;
-
-  color:#333;
-
-  text-decoration:none;
-
-  font-size:13px;
+.section-title small{
+  color:#a88718;
+  letter-spacing:3px;
   font-weight:bold;
 }
 
-.subcategory:hover{
-  background:#111;
-  color:var(--gold2);
+.section-title h2{
+  font-size:38px;
+  margin:10px 0;
 }
 
+.section-title p{
+  color:#777;
+}
 
-/* =====================================================
-   PRODUCT GRID
-===================================================== */
+/* ================= CATEGORY ================= */
 
-.products{
+.category-grid{
   display:grid;
-
   grid-template-columns:repeat(4,1fr);
-
-  gap:22px;
+  gap:20px;
 }
 
-.product{
+.category-card{
   background:white;
+  border:1px solid var(--border);
+  padding:30px 20px;
+  border-radius:18px;
+  text-align:center;
+  text-decoration:none;
+  color:#111;
+  transition:.3s;
+  box-shadow:0 8px 25px rgba(0,0,0,.05);
+}
 
-  border-radius:16px;
+.category-card:hover{
+  transform:translateY(-6px);
+  border-color:var(--gold);
+}
 
-  overflow:hidden;
+.category-icon{
+  font-size:40px;
+  margin-bottom:15px;
+}
 
-  box-shadow:0 8px 25px rgba(0,0,0,.08);
+.category-card h3{
+  margin-bottom:8px;
+}
 
+.category-card p{
+  color:#777;
+  font-size:13px;
+}
+
+/* ================= SUB CATEGORY ================= */
+
+.subcategory{
+  margin-top:25px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.subcategory a{
+  text-decoration:none;
+  color:#333;
+  background:white;
+  border:1px solid var(--border);
+  padding:9px 15px;
+  border-radius:25px;
+  font-size:13px;
   transition:.3s;
 }
 
-.product:hover{
-  transform:translateY(-6px);
+.subcategory a:hover{
+  background:#111;
+  color:white;
+}
 
-  box-shadow:0 16px 35px rgba(0,0,0,.14);
+/* ================= PRODUCTS ================= */
+
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
+}
+
+.product-card{
+  background:white;
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid var(--border);
+  box-shadow:0 8px 25px rgba(0,0,0,.06);
+  transition:.3s;
+}
+
+.product-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 35px rgba(0,0,0,.12);
 }
 
 .product-image{
-  height:255px;
-
-  position:relative;
-
-  overflow:hidden;
-}
-
-.product-image img{
-  width:100%;
-  height:100%;
-
-  object-fit:cover;
-
-  transition:.4s;
-}
-
-.product:hover .product-image img{
-  transform:scale(1.05);
-}
-
-.badge{
-  position:absolute;
-
-  top:12px;
-  left:12px;
-
-  z-index:2;
-
-  padding:6px 10px;
-
-  background:#111;
-  color:var(--gold2);
-
-  border-radius:20px;
-
-  font-size:10px;
-  font-weight:bold;
+  height:220px;
+  background:linear-gradient(135deg,#eee,#ddd);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:65px;
 }
 
 .product-info{
   padding:18px;
 }
 
-.category-name{
-  color:#999;
+.product-info h3{
+  font-size:17px;
+  margin-bottom:8px;
+}
+
+.category-label{
+  color:#9b7b17;
   font-size:11px;
+  font-weight:bold;
   text-transform:uppercase;
   letter-spacing:1px;
 }
 
-.product-info h3{
-  font-size:16px;
-
-  margin:7px 0;
-}
-
-.stars{
-  color:#d19e19;
-  letter-spacing:1px;
-
-  font-size:13px;
-}
-
 .price{
-  font-size:20px;
-  font-weight:800;
-
-  margin-top:9px;
+  font-size:21px;
+  font-weight:bold;
+  margin:10px 0;
 }
 
 .old-price{
-  color:#aaa;
+  color:#999;
   text-decoration:line-through;
-
   font-size:13px;
-
-  margin-left:5px;
+  margin-left:6px;
 }
 
 .deal-btn{
   display:block;
-
-  margin-top:14px;
-
-  padding:11px;
-
   text-align:center;
-
-  text-decoration:none;
-
-  border-radius:8px;
-
   background:#111;
   color:white;
-
+  text-decoration:none;
+  padding:11px;
+  border-radius:25px;
   font-size:13px;
   font-weight:bold;
 }
 
 .deal-btn:hover{
-  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  background:var(--gold);
   color:#111;
 }
 
+/* ================= RATINGS ================= */
 
-/* =====================================================
-   CUSTOMER REVIEWS
-===================================================== */
-
-.review-area{
-  margin-top:16px;
-
-  padding-top:15px;
-
+.feedback-box{
+  margin-top:18px;
   border-top:1px solid #eee;
+  padding-top:15px;
 }
 
-.review-title{
-  font-size:12px;
+.feedback-title{
+  font-size:13px;
   font-weight:bold;
-
   margin-bottom:8px;
 }
 
-.rating-input{
+.stars{
   display:flex;
-  flex-direction:row-reverse;
-  justify-content:flex-end;
-
-  gap:2px;
-
+  gap:3px;
   margin-bottom:10px;
 }
 
-.rating-input input{
-  display:none;
-}
-
-.rating-input label{
-  cursor:pointer;
-
-  color:#ccc;
-
+.stars button{
+  border:0;
+  background:none;
   font-size:22px;
+  cursor:pointer;
+  color:#bbb;
 }
 
-.rating-input label:hover,
-.rating-input label:hover ~ label,
-.rating-input input:checked ~ label{
-  color:#d19e19;
+.stars button.active{
+  color:#e2b72d;
 }
 
-.comment-box{
+.feedback-box textarea{
   width:100%;
-
   min-height:65px;
-
   resize:vertical;
-
   border:1px solid #ddd;
-
   border-radius:8px;
-
   padding:9px;
-
-  outline:none;
-
+  font-family:inherit;
   font-size:12px;
+  outline:none;
 }
 
-.comment-box:focus{
+.feedback-box textarea:focus{
   border-color:var(--gold);
 }
 
-.review-submit{
+.submit-review{
+  margin-top:8px;
   width:100%;
-
-  margin-top:7px;
-
-  padding:9px;
-
   border:0;
-
-  border-radius:8px;
-
+  background:#111;
+  color:white;
+  padding:9px;
+  border-radius:20px;
   cursor:pointer;
-
-  background:#111;
-
-  color:white;
-
+  font-weight:bold;
   font-size:12px;
-
-  font-weight:bold;
 }
 
-.review-submit:hover{
+.submit-review:hover{
   background:var(--gold);
   color:#111;
 }
 
-.review-message{
-  margin-top:7px;
+.saved-review{
+  margin-top:10px;
+  padding:9px;
+  background:#faf8f0;
+  border-radius:8px;
+  font-size:12px;
+}
 
+.saved-stars{
+  color:#d3a91e;
+  margin-bottom:4px;
+}
+
+/* ================= DARK CATEGORY ================= */
+
+.dark-section{
+  background:#090909;
+  color:white;
+}
+
+.dark-section .section-title p{
+  color:#aaa;
+}
+
+.dark-section .section-title small{
+  color:var(--gold2);
+}
+
+.dark-section .subcategory a{
+  background:#151515;
+  color:#ddd;
+  border-color:#333;
+}
+
+.dark-section .subcategory a:hover{
+  background:var(--gold);
+  color:#111;
+}
+
+.dark-section .product-card{
+  background:#151515;
+  border-color:#292929;
+}
+
+.dark-section .product-info h3{
+  color:white;
+}
+
+.dark-section .price{
+  color:white;
+}
+
+.dark-section .feedback-box{
+  border-color:#333;
+}
+
+.dark-section .feedback-box textarea{
+  background:#202020;
+  color:white;
+  border-color:#444;
+}
+
+.dark-section .saved-review{
+  background:#202020;
+}
+
+/* ================= CONTACT ================= */
+
+.contact-section{
+  background:#0b0b0b;
+  color:white;
+}
+
+.contact-container{
+  max-width:760px;
+  margin:auto;
+  text-align:center;
+}
+
+.contact-heading small{
+  color:var(--gold2);
+  letter-spacing:3px;
   font-size:11px;
-
-  color:#777;
-}
-
-
-/* =====================================================
-   WHY TRENDNEST
-===================================================== */
-
-.why-grid{
-  display:grid;
-
-  grid-template-columns:repeat(3,1fr);
-
-  gap:20px;
-}
-
-.why-card{
-  background:white;
-
-  padding:32px;
-
-  border-radius:16px;
-
-  text-align:center;
-
-  border:1px solid #eee;
-}
-
-.why-icon{
-  font-size:34px;
-  margin-bottom:12px;
-}
-
-.why-card h3{
-  margin-bottom:8px;
-}
-
-.why-card p{
-  color:#777;
-  font-size:14px;
-}
-
-
-/* =====================================================
-   SOCIAL
-===================================================== */
-
-.social{
-  text-align:center;
-
-  background:#eeeade;
-}
-
-.social-buttons{
-  margin-top:25px;
-}
-
-.social-buttons a{
-  display:inline-block;
-
-  padding:12px 20px;
-
-  margin:5px;
-
-  background:#111;
-
-  color:white;
-
-  text-decoration:none;
-
-  border-radius:25px;
-
-  font-size:13px;
-}
-
-.social-buttons a:hover{
-  background:var(--gold);
-  color:#111;
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer{
-  padding:38px 6%;
-
-  text-align:center;
-
-  background:#080808;
-
-  color:#999;
-}
-
-.footer-logo{
-  color:white;
-
-  font-size:25px;
   font-weight:bold;
+}
 
+.contact-heading h2{
+  font-size:40px;
+  margin:12px 0;
+}
+
+.contact-heading p{
+  color:#aaa;
+  line-height:1.7;
+  margin-bottom:35px;
+}
+
+.query-form{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.query-form input,
+.query-form textarea{
+  width:100%;
+  padding:15px 17px;
+  border-radius:10px;
+  border:1px solid #333;
+  background:#151515;
+  color:white;
+  font-size:14px;
+  outline:none;
+}
+
+.query-form input:focus,
+.query-form textarea:focus{
+  border-color:var(--gold);
+}
+
+.query-form textarea{
+  resize:vertical;
+}
+
+.query-form button{
+  border:none;
+  padding:15px;
+  border-radius:30px;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#111;
+  font-weight:bold;
+  font-size:15px;
+  cursor:pointer;
+}
+
+.query-form button:hover{
+  transform:translateY(-2px);
+}
+
+.direct-email{
+  margin-top:35px;
+  padding-top:25px;
+  border-top:1px solid #333;
+}
+
+.direct-email p{
+  color:#aaa;
   margin-bottom:10px;
 }
 
-.footer-logo span{
-  color:var(--gold);
+.direct-email a{
+  color:var(--gold2);
+  text-decoration:none;
+  font-weight:bold;
 }
 
-.disclosure{
-  max-width:700px;
-
-  margin:12px auto;
-
-  font-size:11px;
-
-  line-height:1.7;
+.direct-email a:hover{
+  color:white;
 }
 
+/* ================= SOCIAL ================= */
 
-/* =====================================================
-   MOBILE
-===================================================== */
+.social-section{
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:55px 20px;
+}
 
-@media(max-width:950px){
+.social-section h2{
+  margin-bottom:25px;
+}
 
-  .products{
+.social-links{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.social-links a{
+  text-decoration:none;
+  color:white;
+  border:1px solid #444;
+  padding:12px 18px;
+  border-radius:30px;
+  transition:.3s;
+  font-size:14px;
+}
+
+.social-links a:hover{
+  background:var(--gold);
+  color:#111;
+  border-color:var(--gold);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  background:#050505;
+  color:#888;
+  text-align:center;
+  padding:25px 15px;
+  font-size:13px;
+}
+
+footer strong{
+  color:var(--gold2);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+  nav{
+    gap:12px;
+  }
+
+  nav>a,
+  nav .dropdown>a{
+    font-size:12px;
+  }
+
+  .category-grid,
+  .product-grid{
     grid-template-columns:repeat(2,1fr);
   }
 
   .hero h1{
-    font-size:46px;
+    font-size:45px;
   }
-
-  .why-grid{
-    grid-template-columns:1fr;
-  }
-
 }
 
-@media(max-width:700px){
+@media(max-width:600px){
 
-  header{
+  .header{
     flex-direction:column;
-    gap:14px;
+    padding:13px 12px;
   }
 
   nav{
-    gap:12px;
-    flex-wrap:wrap;
+    width:100%;
     justify-content:center;
+    flex-wrap:wrap;
+    gap:9px;
   }
 
-  nav > a,
-  .dropdown > a{
-    font-size:12px;
+  nav a{
+    font-size:11px;
   }
 
   .dropdown-menu{
-    left:-70px;
+    left:-60px;
   }
 
   .hero{
     min-height:500px;
+    padding:60px 18px;
   }
 
   .hero h1{
-    font-size:36px;
+    font-size:38px;
   }
 
   .hero p{
     font-size:15px;
   }
 
-  .fashion-grid{
-    grid-template-columns:1fr;
+  .category-grid,
+  .product-grid{
+    grid-template-columns:1fr 1fr;
+    gap:12px;
   }
 
-  .fashion-folder{
-    min-height:270px;
+  .category-card{
+    padding:20px 10px;
   }
 
-  .section{
-    padding:55px 5%;
+  .category-icon{
+    font-size:32px;
   }
 
-}
-
-@media(max-width:450px){
-
-  .products{
-    grid-template-columns:1fr;
+  .category-card h3{
+    font-size:14px;
   }
 
   .product-image{
-    height:280px;
+    height:160px;
+    font-size:48px;
   }
 
-  .hero h1{
-    font-size:31px;
+  .product-info{
+    padding:13px;
   }
 
+  .product-info h3{
+    font-size:14px;
+  }
+
+  .price{
+    font-size:17px;
+  }
+
+  section{
+    padding:55px 15px;
+  }
+
+  .section-title h2{
+    font-size:30px;
+  }
+
+  .contact-heading h2{
+    font-size:30px;
+  }
 }
-
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
+<!-- ================= HEADER ================= -->
 
 <header>
+  <div class="header">
 
-  <div class="logo">
-    Trend<span>Nest</span>
-  </div>
+    <a href="#home" class="logo">
+      Trend<span>Nest</span>
+    </a>
 
-  <nav>
+    <nav>
 
-    <a href="#home">Home</a>
+      <a href="#home">Home</a>
 
-    <div class="dropdown">
+      <div class="dropdown">
 
-      <a href="#fashion">
-        Fashion ▾
-      </a>
+        <a href="#fashion">Fashion ▾</a>
 
-      <div class="dropdown-menu">
+        <div class="dropdown-menu">
 
-        <div class="dropdown-title">
-          Fashion Collection
+          <a href="#mens-wear">👨 Men's Wear</a>
+
+          <a href="#ladies-wear">👩 Ladies Wear</a>
+
         </div>
-
-        <a href="#mens-wear">
-          👨 Men's Wear
-        </a>
-
-        <a href="#ladies-wear">
-          👩 Ladies Wear
-        </a>
 
       </div>
 
-    </div>
+      <a href="#gadgets">Gadgets</a>
 
-    <a href="#gadgets">Gadgets</a>
+      <a href="#beauty">Beauty</a>
 
-    <a href="#beauty">Beauty</a>
+      <a href="#jewellery">Jewellery</a>
 
-    <a href="#under499">Under ₹499</a>
+      <a href="#kitchenware">Kitchenware</a>
 
-  </nav>
+      <a href="#under499">Under ₹499</a>
 
+    </nav>
+
+  </div>
 </header>
 
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+<!-- ================= HERO ================= -->
 
 <section class="hero" id="home">
 
   <div class="hero-content">
 
-    <div class="hero-label">
-      TrendNest • Curated Finds
-    </div>
+    <small>WELCOME TO TRENDNEST</small>
 
     <h1>
-      Discover <span>What's Trending</span>
+      Discover <span>Trending</span><br>
+      Products & Deals
     </h1>
 
     <p>
-      Fashion, gadgets, beauty and everyday finds —
-      curated for people who love stylish products and better deals.
+      Fashion, gadgets, beauty, jewellery, kitchen essentials
+      and more — all in one place.
     </p>
 
     <div class="hero-buttons">
@@ -936,8 +819,8 @@ footer{
         Explore Fashion
       </a>
 
-      <a href="#under499" class="btn btn-outline">
-        Finds Under ₹499
+      <a href="#under499" class="btn btn-dark">
+        Deals Under ₹499
       </a>
 
     </div>
@@ -947,379 +830,393 @@ footer{
 </section>
 
 
-<!-- =====================================================
-     FASHION FOLDERS
-===================================================== -->
+<!-- ================= FASHION ================= -->
 
-<section class="section" id="fashion">
+<section id="fashion">
 
-  <div class="heading">
+  <div class="container">
 
-    <small>Shop By Collection</small>
+    <div class="section-title">
 
-    <h2>Fashion</h2>
+      <small>FASHION COLLECTION</small>
 
-    <p>
-      Choose a collection to explore products.
-    </p>
-
-  </div>
-
-
-  <div class="fashion-grid">
-
-
-    <!-- MEN'S FOLDER -->
-
-    <a href="#mens-wear" class="fashion-folder men-folder">
-
-      <div class="folder-icon">
-        👨
-      </div>
-
-      <h3>
-        Men's Wear
-      </h3>
+      <h2>Fashion</h2>
 
       <p>
-        T-Shirts • Shirts • Jeans • Kurtas • Footwear
+        Explore men's and ladies' trending fashion.
       </p>
 
-      <div class="folder-link">
-        Open Men's Collection →
-      </div>
-
-    </a>
+    </div>
 
 
-    <!-- LADIES FOLDER -->
+    <div class="category-grid">
 
-    <a href="#ladies-wear" class="fashion-folder women-folder">
+      <a href="#mens-wear" class="category-card">
 
-      <div class="folder-icon">
-        👩
-      </div>
+        <div class="category-icon">👨</div>
 
-      <h3>
-        Ladies Wear
-      </h3>
+        <h3>Men's Wear</h3>
 
-      <p>
-        Kurtis • Tops • Dresses • Sarees • Footwear
-      </p>
+        <p>Jeans • Kurta • Shirts • T-Shirts</p>
 
-      <div class="folder-link">
-        Open Ladies Collection →
-      </div>
+      </a>
 
-    </a>
+
+      <a href="#ladies-wear" class="category-card">
+
+        <div class="category-icon">👩</div>
+
+        <h3>Ladies Wear</h3>
+
+        <p>Kurti • Saree • Tops • Nighty</p>
+
+      </a>
+
+    </div>
 
   </div>
 
 </section>
 
 
-<!-- =====================================================
-     MEN'S WEAR
-===================================================== -->
+<!-- ================= MEN ================= -->
 
-<section class="section dark-section" id="mens-wear">
+<section class="dark-section" id="mens-wear">
 
-  <div class="heading">
+  <div class="container">
 
-    <small>Men's Collection</small>
+    <div class="section-title">
 
-    <h2>Men's Wear</h2>
+      <small>MEN'S COLLECTION</small>
 
-    <p>
-      Explore stylish men's fashion picks.
-    </p>
+      <h2>Men's Wear</h2>
 
-  </div>
+      <p>
+        Trending styles for everyday and special occasions.
+      </p>
 
+      <div class="subcategory">
 
-  <div class="subcategories">
-
-    <a href="#men-tshirts" class="subcategory">
-      T-Shirts
-    </a>
-
-    <a href="#men-shirts" class="subcategory">
-      Shirts
-    </a>
-
-    <a href="#men-jeans" class="subcategory">
-      Jeans
-    </a>
-
-    <a href="#men-kurtas" class="subcategory">
-      Kurtas
-    </a>
-
-  </div>
-
-
-  <div class="products">
-
-
-    <!-- MEN PRODUCT 1 -->
-
-    <div class="product" id="men-tshirts">
-
-      <div class="product-image">
-
-        <span class="badge">
-          TRENDING
-        </span>
-
-        <img
-        src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=85"
-        alt="Men T Shirt">
+        <a href="#men-jeans">Jeans</a>
+        <a href="#men-kurta">Kurta</a>
+        <a href="#men-kurta-set">Kurta Set</a>
+        <a href="#men-shirts">Shirt</a>
+        <a href="#men-tshirts">T-Shirt</a>
 
       </div>
 
-      <div class="product-info">
+    </div>
 
-        <div class="category-name">
-          Men's • T-Shirts
+
+    <div class="product-grid">
+
+
+      <!-- MEN JEANS -->
+
+      <div class="product-card" id="men-jeans">
+
+        <div class="product-image">
+          👖
         </div>
 
-        <h3>
-          Premium Casual T-Shirt
-        </h3>
+        <div class="product-info">
 
-        <div class="stars">
-          ★★★★★
-        </div>
+          <span class="category-label">
+            Men's Jeans
+          </span>
 
-        <div class="price">
-          ₹399
-          <span class="old-price">
+          <h3>Classic Regular Fit Jeans</h3>
+
+          <div class="price">
             ₹799
+            <span class="old-price">₹1,499</span>
+          </div>
+
+          <a href="#" class="deal-btn">
+            CHECK PRICE
+          </a>
+
+          <div class="feedback-box">
+
+            <div class="feedback-title">
+              ⭐ Rate this product
+            </div>
+
+            <div class="stars" data-product="men-jeans-1">
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+            </div>
+
+            <textarea
+              placeholder="Write your comment..."
+              data-comment="men-jeans-1"></textarea>
+
+            <button
+              class="submit-review"
+              onclick="saveReview('men-jeans-1')">
+              Submit Review
+            </button>
+
+            <div
+              class="saved-review"
+              id="review-men-jeans-1"
+              style="display:none;">
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- MEN KURTA -->
+
+      <div class="product-card" id="men-kurta">
+
+        <div class="product-image">
+          👔
+        </div>
+
+        <div class="product-info">
+
+          <span class="category-label">
+            Men's Kurta
           </span>
-        </div>
 
-        <a href="#" class="deal-btn">
-          View Deal →
-        </a>
+          <h3>Premium Cotton Kurta</h3>
 
-        <div class="review-area">
-
-          <div class="review-title">
-            Rate this product
+          <div class="price">
+            ₹599
+            <span class="old-price">₹999</span>
           </div>
 
-          <div class="rating-input">
+          <a href="#" class="deal-btn">
+            CHECK PRICE
+          </a>
 
-            <input type="radio" id="m1-5" name="m1-rating" value="5">
-            <label for="m1-5">★</label>
+          <div class="feedback-box">
 
-            <input type="radio" id="m1-4" name="m1-rating" value="4">
-            <label for="m1-4">★</label>
+            <div class="feedback-title">
+              ⭐ Rate this product
+            </div>
 
-            <input type="radio" id="m1-3" name="m1-rating" value="3">
-            <label for="m1-3">★</label>
+            <div class="stars" data-product="men-kurta-1">
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+            </div>
 
-            <input type="radio" id="m1-2" name="m1-rating" value="2">
-            <label for="m1-2">★</label>
+            <textarea
+              placeholder="Write your comment..."
+              data-comment="men-kurta-1"></textarea>
 
-            <input type="radio" id="m1-1" name="m1-rating" value="1">
-            <label for="m1-1">★</label>
+            <button
+              class="submit-review"
+              onclick="saveReview('men-kurta-1')">
+              Submit Review
+            </button>
+
+            <div
+              class="saved-review"
+              id="review-men-kurta-1"
+              style="display:none;">
+            </div>
 
           </div>
-
-          <textarea
-          id="m1-comment"
-          class="comment-box"
-          placeholder="Write your comment..."></textarea>
-
-          <button
-          class="review-submit"
-          onclick="submitReview('m1')">
-          Submit Review
-          </button>
-
-          <div id="m1-message" class="review-message"></div>
 
         </div>
 
       </div>
 
-    </div>
 
+      <!-- MEN KURTA SET -->
 
-    <!-- MEN PRODUCT 2 -->
+      <div class="product-card" id="men-kurta-set">
 
-    <div class="product" id="men-shirts">
-
-      <div class="product-image">
-
-        <span class="badge">
-          HOT PICK
-        </span>
-
-        <img
-        src="https://images.unsplash.com/photo-1603252110481-7ba873bf42ab?auto=format&fit=crop&w=700&q=85"
-        alt="Men Shirt">
-
-      </div>
-
-      <div class="product-info">
-
-        <div class="category-name">
-          Men's • Shirts
+        <div class="product-image">
+          🥻
         </div>
 
-        <h3>
-          Classic Casual Shirt
-        </h3>
+        <div class="product-info">
 
-        <div class="stars">
-          ★★★★★
-        </div>
+          <span class="category-label">
+            Men's Kurta Set
+          </span>
 
-        <div class="price">
-          ₹599
-          <span class="old-price">
+          <h3>Festive Kurta Set</h3>
+
+          <div class="price">
             ₹999
-          </span>
-        </div>
-
-        <a href="#" class="deal-btn">
-          View Deal →
-        </a>
-
-        <div class="review-area">
-
-          <div class="review-title">
-            Rate this product
+            <span class="old-price">₹1,799</span>
           </div>
 
-          <div class="rating-input">
+          <a href="#" class="deal-btn">
+            CHECK PRICE
+          </a>
 
-            <input type="radio" id="m2-5" name="m2-rating" value="5">
-            <label for="m2-5">★</label>
+          <div class="feedback-box">
 
-            <input type="radio" id="m2-4" name="m2-rating" value="4">
-            <label for="m2-4">★</label>
+            <div class="feedback-title">
+              ⭐ Rate this product
+            </div>
 
-            <input type="radio" id="m2-3" name="m2-rating" value="3">
-            <label for="m2-3">★</label>
+            <div class="stars" data-product="men-kurta-set-1">
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+            </div>
 
-            <input type="radio" id="m2-2" name="m2-rating" value="2">
-            <label for="m2-2">★</label>
+            <textarea
+              placeholder="Write your comment..."
+              data-comment="men-kurta-set-1"></textarea>
 
-            <input type="radio" id="m2-1" name="m2-rating" value="1">
-            <label for="m2-1">★</label>
+            <button
+              class="submit-review"
+              onclick="saveReview('men-kurta-set-1')">
+              Submit Review
+            </button>
+
+            <div
+              class="saved-review"
+              id="review-men-kurta-set-1"
+              style="display:none;">
+            </div>
 
           </div>
 
-          <textarea
-          id="m2-comment"
-          class="comment-box"
-          placeholder="Write your comment..."></textarea>
-
-          <button
-          class="review-submit"
-          onclick="submitReview('m2')">
-          Submit Review
-          </button>
-
-          <div id="m2-message" class="review-message"></div>
-
         </div>
 
       </div>
 
-    </div>
 
+      <!-- MEN SHIRT -->
 
-    <!-- MEN PRODUCT 3 -->
+      <div class="product-card" id="men-shirts">
 
-    <div class="product" id="men-jeans">
-
-      <div class="product-image">
-
-        <span class="badge">
-          DEAL
-        </span>
-
-        <img
-        src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=700&q=85"
-        alt="Men Jeans">
-
-      </div>
-
-      <div class="product-info">
-
-        <div class="category-name">
-          Men's • Jeans
+        <div class="product-image">
+          👕
         </div>
 
-        <h3>
-          Classic Blue Jeans
-        </h3>
+        <div class="product-info">
 
-        <div class="stars">
-          ★★★★★
-        </div>
-
-        <div class="price">
-          ₹799
-          <span class="old-price">
-            ₹1299
+          <span class="category-label">
+            Men's Shirt
           </span>
-        </div>
 
-        <a href="#" class="deal-btn">
-          View Deal →
-        </a>
+          <h3>Premium Casual Shirt</h3>
+
+          <div class="price">
+            ₹649
+            <span class="old-price">₹1,199</span>
+          </div>
+
+          <a href="#" class="deal-btn">
+            CHECK PRICE
+          </a>
+
+          <div class="feedback-box">
+
+            <div class="feedback-title">
+              ⭐ Rate this product
+            </div>
+
+            <div class="stars" data-product="men-shirt-1">
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+            </div>
+
+            <textarea
+              placeholder="Write your comment..."
+              data-comment="men-shirt-1"></textarea>
+
+            <button
+              class="submit-review"
+              onclick="saveReview('men-shirt-1')">
+              Submit Review
+            </button>
+
+            <div
+              class="saved-review"
+              id="review-men-shirt-1"
+              style="display:none;">
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
 
-    </div>
 
+      <!-- MEN TSHIRT -->
 
-    <!-- MEN PRODUCT 4 -->
+      <div class="product-card" id="men-tshirts">
 
-    <div class="product" id="men-kurtas">
-
-      <div class="product-image">
-
-        <span class="badge">
-          NEW
-        </span>
-
-        <img
-        src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=700&q=85"
-        alt="Men Kurta">
-
-      </div>
-
-      <div class="product-info">
-
-        <div class="category-name">
-          Men's • Kurtas
+        <div class="product-image">
+          👕
         </div>
 
-        <h3>
-          Premium Festive Kurta
-        </h3>
+        <div class="product-info">
 
-        <div class="stars">
-          ★★★★★
-        </div>
-
-        <div class="price">
-          ₹899
-          <span class="old-price">
-            ₹1499
+          <span class="category-label">
+            Men's T-Shirt
           </span>
-        </div>
 
-        <a href="#" class="deal-btn">
-          View Deal →
-        </a>
+          <h3>Oversized Trendy T-Shirt</h3>
+
+          <div class="price">
+            ₹399
+            <span class="old-price">₹799</span>
+          </div>
+
+          <a href="#" class="deal-btn">
+            CHECK PRICE
+          </a>
+
+          <div class="feedback-box">
+
+            <div class="feedback-title">
+              ⭐ Rate this product
+            </div>
+
+            <div class="stars" data-product="men-tshirt-1">
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+            </div>
+
+            <textarea
+              placeholder="Write your comment..."
+              data-comment="men-tshirt-1"></textarea>
+
+            <button
+              class="submit-review"
+              onclick="saveReview('men-tshirt-1')">
+              Submit Review
+            </button>
+
+            <div
+              class="saved-review"
+              id="review-men-tshirt-1"
+              style="display:none;">
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
 
@@ -1330,275 +1227,383 @@ footer{
 </section>
 
 
-<!-- =====================================================
-     LADIES WEAR
-===================================================== -->
+<!-- ================= LADIES ================= -->
 
-<section class="section" id="ladies-wear">
+<section id="ladies-wear">
 
-  <div class="heading">
+  <div class="container">
 
-    <small>Ladies Collection</small>
+    <div class="section-title">
 
-    <h2>Ladies Wear</h2>
+      <small>LADIES COLLECTION</small>
 
-    <p>
-      Explore stylish women's fashion picks.
-    </p>
+      <h2>Ladies Wear</h2>
 
-  </div>
+      <p>
+        Stylish and trending fashion picks for women.
+      </p>
 
+      <div class="subcategory">
 
-  <div class="subcategories">
-
-    <a href="#ladies-kurtis" class="subcategory">
-      Kurtis
-    </a>
-
-     <a href="#ladies-kurtis" class="subcategory">
-      Jeans
-    </a>
-
-     <a href="#ladies-kurtis" class="subcategory">
-      Kurta Sets
-    </a>
-
-    <a href="#ladies-tops" class="subcategory">
-      Tops
-    </a>
-
-    <a href="#ladies-dresses" class="subcategory">
-      Dresses
-    </a>
-
-    <a href="#ladies-sarees" class="subcategory">
-      Sarees
-    </a>
-
-  </div>
-
-
-  <div class="products">
-
-
-    <!-- LADIES PRODUCT 1 -->
-
-    <div class="product" id="ladies-kurtis">
-
-      <div class="product-image">
-
-        <span class="badge">
-          TRENDING
-        </span>
-
-        <img
-        src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=700&q=85"
-        alt="Ladies Kurti">
-
-      </div>
-
-      <div class="product-info">
-
-        <div class="category-name">
-          Ladies • Kurtis
-        </div>
-
-        <h3>
-          Elegant Daily Kurti
-        </h3>
-
-        <div class="stars">
-          ★★★★★
-        </div>
-
-        <div class="price">
-          ₹499
-          <span class="old-price">
-            ₹899
-          </span>
-        </div>
-
-        <a href="#" class="deal-btn">
-          View Deal →
-        </a>
-
-        <div class="review-area">
-
-          <div class="review-title">
-            Rate this product
-          </div>
-
-          <div class="rating-input">
-
-            <input type="radio" id="l1-5" name="l1-rating" value="5">
-            <label for="l1-5">★</label>
-
-            <input type="radio" id="l1-4" name="l1-rating" value="4">
-            <label for="l1-4">★</label>
-
-            <input type="radio" id="l1-3" name="l1-rating" value="3">
-            <label for="l1-3">★</label>
-
-            <input type="radio" id="l1-2" name="l1-rating" value="2">
-            <label for="l1-2">★</label>
-
-            <input type="radio" id="l1-1" name="l1-rating" value="1">
-            <label for="l1-1">★</label>
-
-          </div>
-
-          <textarea
-          id="l1-comment"
-          class="comment-box"
-          placeholder="Write your comment..."></textarea>
-
-          <button
-          class="review-submit"
-          onclick="submitReview('l1')">
-          Submit Review
-          </button>
-
-          <div id="l1-message" class="review-message"></div>
-
-        </div>
+        <a href="#ladies-jeans">Jeans</a>
+        <a href="#ladies-kurti">Kurti</a>
+        <a href="#ladies-saree">Saree</a>
+        <a href="#ladies-kurta-set">Kurta Set</a>
+        <a href="#ladies-top">Top</a>
+        <a href="#ladies-nighty">Nighty</a>
 
       </div>
 
     </div>
 
 
-    <!-- LADIES PRODUCT 2 -->
+    <div class="product-grid">
 
-    <div class="product" id="ladies-tops">
 
-      <div class="product-image">
+      <div class="product-card" id="ladies-jeans">
 
-        <span class="badge">
-          HOT
-        </span>
-
-        <img
-        src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=700&q=85"
-        alt="Ladies Top">
-
-      </div>
-
-      <div class="product-info">
-
-        <div class="category-name">
-          Ladies • Tops
+        <div class="product-image">
+          👖
         </div>
 
-        <h3>
-          Stylish Casual Top
-        </h3>
+        <div class="product-info">
 
-        <div class="stars">
-          ★★★★★
-        </div>
+          <span class="category-label">
+            Ladies Jeans
+          </span>
 
-        <div class="price">
-          ₹399
-          <span class="old-price">
+          <h3>Women's Straight Fit Jeans</h3>
+
+          <div class="price">
             ₹699
+            <span class="old-price">₹1,299</span>
+          </div>
+
+          <a href="#" class="deal-btn">
+            CHECK PRICE
+          </a>
+
+          <div class="feedback-box">
+
+            <div class="feedback-title">⭐ Rate this product</div>
+
+            <div class="stars" data-product="ladies-jeans-1">
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+            </div>
+
+            <textarea
+              placeholder="Write your comment..."
+              data-comment="ladies-jeans-1"></textarea>
+
+            <button
+              class="submit-review"
+              onclick="saveReview('ladies-jeans-1')">
+              Submit Review
+            </button>
+
+            <div
+              class="saved-review"
+              id="review-ladies-jeans-1"
+              style="display:none;">
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="product-card" id="ladies-kurti">
+
+        <div class="product-image">
+          👗
+        </div>
+
+        <div class="product-info">
+
+          <span class="category-label">
+            Ladies Kurti
           </span>
-        </div>
 
-        <a href="#" class="deal-btn">
-          View Deal →
-        </a>
+          <h3>Printed Women's Kurti</h3>
+
+          <div class="price">
+            ₹499
+            <span class="old-price">₹899</span>
+          </div>
+
+          <a href="#" class="deal-btn">
+            CHECK PRICE
+          </a>
+
+          <div class="feedback-box">
+
+            <div class="feedback-title">⭐ Rate this product</div>
+
+            <div class="stars" data-product="ladies-kurti-1">
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+            </div>
+
+            <textarea
+              placeholder="Write your comment..."
+              data-comment="ladies-kurti-1"></textarea>
+
+            <button
+              class="submit-review"
+              onclick="saveReview('ladies-kurti-1')">
+              Submit Review
+            </button>
+
+            <div
+              class="saved-review"
+              id="review-ladies-kurti-1"
+              style="display:none;">
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
 
-    </div>
 
+      <div class="product-card" id="ladies-saree">
 
-    <!-- LADIES PRODUCT 3 -->
-
-    <div class="product" id="ladies-dresses">
-
-      <div class="product-image">
-
-        <span class="badge">
-          NEW
-        </span>
-
-        <img
-        src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=700&q=85"
-        alt="Ladies Dress">
-
-      </div>
-
-      <div class="product-info">
-
-        <div class="category-name">
-          Ladies • Dresses
+        <div class="product-image">
+          🥻
         </div>
 
-        <h3>
-          Elegant Party Dress
-        </h3>
+        <div class="product-info">
 
-        <div class="stars">
-          ★★★★★
-        </div>
-
-        <div class="price">
-          ₹699
-          <span class="old-price">
-            ₹1199
+          <span class="category-label">
+            Ladies Saree
           </span>
-        </div>
 
-        <a href="#" class="deal-btn">
-          View Deal →
-        </a>
+          <h3>Elegant Party Wear Saree</h3>
+
+          <div class="price">
+            ₹899
+            <span class="old-price">₹1,799</span>
+          </div>
+
+          <a href="#" class="deal-btn">
+            CHECK PRICE
+          </a>
+
+          <div class="feedback-box">
+
+            <div class="feedback-title">⭐ Rate this product</div>
+
+            <div class="stars" data-product="ladies-saree-1">
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+            </div>
+
+            <textarea
+              placeholder="Write your comment..."
+              data-comment="ladies-saree-1"></textarea>
+
+            <button
+              class="submit-review"
+              onclick="saveReview('ladies-saree-1')">
+              Submit Review
+            </button>
+
+            <div
+              class="saved-review"
+              id="review-ladies-saree-1"
+              style="display:none;">
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
 
-    </div>
 
+      <div class="product-card" id="ladies-kurta-set">
 
-    <!-- LADIES PRODUCT 4 -->
-
-    <div class="product" id="ladies-sarees">
-
-      <div class="product-image">
-
-        <span class="badge">
-          PREMIUM
-        </span>
-
-        <img
-        src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=700&q=85"
-        alt="Ladies Saree">
-
-      </div>
-
-      <div class="product-info">
-
-        <div class="category-name">
-          Ladies • Sarees
+        <div class="product-image">
+          👗
         </div>
 
-        <h3>
-          Premium Festive Saree
-        </h3>
+        <div class="product-info">
 
-        <div class="stars">
-          ★★★★★
-        </div>
-
-        <div class="price">
-          ₹799
-          <span class="old-price">
-            ₹1399
+          <span class="category-label">
+            Ladies Kurta Set
           </span>
+
+          <h3>Elegant Kurta Pant Set</h3>
+
+          <div class="price">
+            ₹799
+            <span class="old-price">₹1,499</span>
+          </div>
+
+          <a href="#" class="deal-btn">
+            CHECK PRICE
+          </a>
+
+          <div class="feedback-box">
+
+            <div class="feedback-title">⭐ Rate this product</div>
+
+            <div class="stars" data-product="ladies-kurta-set-1">
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+            </div>
+
+            <textarea
+              placeholder="Write your comment..."
+              data-comment="ladies-kurta-set-1"></textarea>
+
+            <button
+              class="submit-review"
+              onclick="saveReview('ladies-kurta-set-1')">
+              Submit Review
+            </button>
+
+            <div
+              class="saved-review"
+              id="review-ladies-kurta-set-1"
+              style="display:none;">
+            </div>
+
+          </div>
+
         </div>
 
-        <a href="#" class="deal-btn">
-          View Deal →
-        </a>
+      </div>
+
+
+      <div class="product-card" id="ladies-top">
+
+        <div class="product-image">
+          👚
+        </div>
+
+        <div class="product-info">
+
+          <span class="category-label">
+            Ladies Top
+          </span>
+
+          <h3>Trendy Women's Top</h3>
+
+          <div class="price">
+            ₹349
+            <span class="old-price">₹699</span>
+          </div>
+
+          <a href="#" class="deal-btn">
+            CHECK PRICE
+          </a>
+
+          <div class="feedback-box">
+
+            <div class="feedback-title">⭐ Rate this product</div>
+
+            <div class="stars" data-product="ladies-top-1">
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+            </div>
+
+            <textarea
+              placeholder="Write your comment..."
+              data-comment="ladies-top-1"></textarea>
+
+            <button
+              class="submit-review"
+              onclick="saveReview('ladies-top-1')">
+              Submit Review
+            </button>
+
+            <div
+              class="saved-review"
+              id="review-ladies-top-1"
+              style="display:none;">
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="product-card" id="ladies-nighty">
+
+        <div class="product-image">
+          🌙
+        </div>
+
+        <div class="product-info">
+
+          <span class="category-label">
+            Ladies Nighty
+          </span>
+
+          <h3>Comfortable Cotton Nighty</h3>
+
+          <div class="price">
+            ₹399
+            <span class="old-price">₹799</span>
+          </div>
+
+          <a href="#" class="deal-btn">
+            CHECK PRICE
+          </a>
+
+          <div class="feedback-box">
+
+            <div class="feedback-title">⭐ Rate this product</div>
+
+            <div class="stars" data-product="ladies-nighty-1">
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+              <button>★</button>
+            </div>
+
+            <textarea
+              placeholder="Write your comment..."
+              data-comment="ladies-nighty-1"></textarea>
+
+            <button
+              class="submit-review"
+              onclick="saveReview('ladies-nighty-1')">
+              Submit Review
+            </button>
+
+            <div
+              class="saved-review"
+              id="review-ladies-nighty-1"
+              style="display:none;">
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
 
@@ -1609,133 +1614,109 @@ footer{
 </section>
 
 
-<!-- =====================================================
-     GADGETS
-===================================================== -->
+<!-- ================= GADGETS ================= -->
 
-<section class="section dark-section" id="gadgets">
+<section class="dark-section" id="gadgets">
 
-  <div class="heading">
+  <div class="container">
 
-    <small>Smart Finds</small>
+    <div class="section-title">
 
-    <h2>Gadgets</h2>
+      <small>SMART PICKS</small>
 
-    <p>
-      Useful tech products and everyday gadgets.
-    </p>
+      <h2>Gadgets</h2>
 
-  </div>
-
-
-  <div class="products">
-
-
-    <div class="product">
-
-      <div class="product-image">
-
-        <span class="badge">
-          HOT
-        </span>
-
-        <img
-        src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=700&q=85"
-        alt="Headphones">
-
-      </div>
-
-      <div class="product-info">
-
-        <div class="category-name">
-          Audio
-        </div>
-
-        <h3>
-          Wireless Headphones
-        </h3>
-
-        <div class="price">
-          ₹999
-        </div>
-
-        <a href="#" class="deal-btn">
-          View Deal →
-        </a>
-
-      </div>
+      <p>Useful and trending gadgets at attractive prices.</p>
 
     </div>
 
 
-    <div class="product">
+    <div class="product-grid">
 
-      <div class="product-image">
+      <div class="product-card">
 
-        <span class="badge">
-          TRENDING
-        </span>
+        <div class="product-image">🎧</div>
 
-        <img
-        src="https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=700&q=85"
-        alt="Earbuds">
+        <div class="product-info">
+
+          <span class="category-label">Gadget</span>
+
+          <h3>Wireless Bluetooth Earbuds</h3>
+
+          <div class="price">
+            ₹899
+            <span class="old-price">₹1,999</span>
+          </div>
+
+          <a href="#" class="deal-btn">CHECK PRICE</a>
+
+        </div>
 
       </div>
 
-      <div class="product-info">
 
-        <div class="category-name">
-          Audio
+      <div class="product-card">
+
+        <div class="product-image">⌚</div>
+
+        <div class="product-info">
+
+          <span class="category-label">Gadget</span>
+
+          <h3>Smart Fitness Watch</h3>
+
+          <div class="price">
+            ₹999
+            <span class="old-price">₹2,499</span>
+          </div>
+
+          <a href="#" class="deal-btn">CHECK PRICE</a>
+
         </div>
-
-        <h3>
-          Wireless Earbuds
-        </h3>
-
-        <div class="price">
-          ₹799
-        </div>
-
-        <a href="#" class="deal-btn">
-          View Deal →
-        </a>
 
       </div>
 
-    </div>
 
+      <div class="product-card">
 
-    <div class="product">
+        <div class="product-image">🔊</div>
 
-      <div class="product-image">
+        <div class="product-info">
 
-        <span class="badge">
-          DEAL
-        </span>
+          <span class="category-label">Gadget</span>
 
-        <img
-        src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=85"
-        alt="Smart Watch">
+          <h3>Portable Bluetooth Speaker</h3>
+
+          <div class="price">
+            ₹699
+            <span class="old-price">₹1,499</span>
+          </div>
+
+          <a href="#" class="deal-btn">CHECK PRICE</a>
+
+        </div>
 
       </div>
 
-      <div class="product-info">
 
-        <div class="category-name">
-          Wearables
+      <div class="product-card">
+
+        <div class="product-image">🔌</div>
+
+        <div class="product-info">
+
+          <span class="category-label">Gadget</span>
+
+          <h3>Fast Charging Adapter</h3>
+
+          <div class="price">
+            ₹299
+            <span class="old-price">₹599</span>
+          </div>
+
+          <a href="#" class="deal-btn">CHECK PRICE</a>
+
         </div>
-
-        <h3>
-          Smart Watch
-        </h3>
-
-        <div class="price">
-          ₹999
-        </div>
-
-        <a href="#" class="deal-btn">
-          View Deal →
-        </a>
 
       </div>
 
@@ -1746,188 +1727,109 @@ footer{
 </section>
 
 
-<!-- =====================================================
-     BEAUTY
-===================================================== -->
+<!-- ================= BEAUTY ================= -->
 
-<section class="section" id="beauty">
+<section id="beauty">
 
-  <div class="heading">
+  <div class="container">
 
-    <small>Self Care</small>
+    <div class="section-title">
 
-    <h2>Beauty & Lifestyle</h2>
+      <small>BEAUTY PICKS</small>
 
-    <p>
-      Popular beauty and lifestyle finds.
-    </p>
+      <h2>Beauty</h2>
 
-  </div>
-
-
-  <div class="products">
-
-
-    <div class="product">
-
-      <div class="product-image">
-
-        <img
-        src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=700&q=85"
-        alt="Beauty">
-
-      </div>
-
-      <div class="product-info">
-
-        <div class="category-name">
-          Beauty
-        </div>
-
-        <h3>
-          Beauty Essentials
-        </h3>
-
-        <div class="price">
-          ₹299
-        </div>
-
-        <a href="#" class="deal-btn">
-          View Deal →
-        </a>
-
-      </div>
+      <p>Trending beauty and personal care products.</p>
 
     </div>
 
 
-    <div class="product">
+    <div class="product-grid">
 
-      <div class="product-image">
+      <div class="product-card">
 
-        <img
-        src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=700&q=85"
-        alt="Skincare">
+        <div class="product-image">💄</div>
+
+        <div class="product-info">
+
+          <span class="category-label">Beauty</span>
+
+          <h3>Everyday Makeup Kit</h3>
+
+          <div class="price">
+            ₹399
+            <span class="old-price">₹799</span>
+          </div>
+
+          <a href="#" class="deal-btn">CHECK PRICE</a>
+
+        </div>
 
       </div>
 
-      <div class="product-info">
 
-        <div class="category-name">
-          Skincare
+      <div class="product-card">
+
+        <div class="product-image">🧴</div>
+
+        <div class="product-info">
+
+          <span class="category-label">Beauty</span>
+
+          <h3>Skincare Essentials</h3>
+
+          <div class="price">
+            ₹449
+            <span class="old-price">₹899</span>
+          </div>
+
+          <a href="#" class="deal-btn">CHECK PRICE</a>
+
         </div>
-
-        <h3>
-          Skincare Essentials
-        </h3>
-
-        <div class="price">
-          ₹399
-        </div>
-
-        <a href="#" class="deal-btn">
-          View Deal →
-        </a>
 
       </div>
 
-    </div>
 
-  </div>
+      <div class="product-card">
 
-</section>
+        <div class="product-image">💅</div>
 
+        <div class="product-info">
 
-<!-- =====================================================
-     UNDER 499
-===================================================== -->
+          <span class="category-label">Beauty</span>
 
-<section class="section dark-section" id="under499">
+          <h3>Nail Art Set</h3>
 
-  <div class="heading">
+          <div class="price">
+            ₹199
+            <span class="old-price">₹399</span>
+          </div>
 
-    <small>Budget Collection</small>
+          <a href="#" class="deal-btn">CHECK PRICE</a>
 
-    <h2>Best Finds Under ₹499</h2>
-
-    <p>
-      Trendy picks at budget-friendly prices.
-    </p>
-
-  </div>
-
-
-  <div class="products">
-
-
-    <div class="product">
-
-      <div class="product-image">
-
-        <span class="badge">
-          UNDER ₹499
-        </span>
-
-        <img
-        src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=700&q=85"
-        alt="Fashion">
+        </div>
 
       </div>
 
-      <div class="product-info">
 
-        <div class="category-name">
-          Fashion
+      <div class="product-card">
+
+        <div class="product-image">🪞</div>
+
+        <div class="product-info">
+
+          <span class="category-label">Beauty</span>
+
+          <h3>Portable Makeup Mirror</h3>
+
+          <div class="price">
+            ₹299
+            <span class="old-price">₹599</span>
+          </div>
+
+          <a href="#" class="deal-btn">CHECK PRICE</a>
+
         </div>
-
-        <h3>
-          Trending Fashion Pick
-        </h3>
-
-        <div class="price">
-          ₹399
-        </div>
-
-        <a href="#" class="deal-btn">
-          View Deal →
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <div class="product">
-
-      <div class="product-image">
-
-        <span class="badge">
-          UNDER ₹499
-        </span>
-
-        <img
-        src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=85"
-        alt="Shoes">
-
-      </div>
-
-      <div class="product-info">
-
-        <div class="category-name">
-          Footwear
-        </div>
-
-        <h3>
-          Trending Shoes
-        </h3>
-
-        <div class="price">
-          ₹449
-        </div>
-
-        <a href="#" class="deal-btn">
-          View Deal →
-        </a>
 
       </div>
 
@@ -1938,74 +1840,393 @@ footer{
 </section>
 
 
-<!-- =====================================================
-     WHY TRENDNEST
-===================================================== -->
+<!-- ================= JEWELLERY ================= -->
 
-<section class="section">
+<section class="dark-section" id="jewellery">
 
-  <div class="heading">
+  <div class="container">
 
-    <small>Why Us</small>
+    <div class="section-title">
 
-    <h2>Why TrendNest?</h2>
+      <small>STYLE COLLECTION</small>
+
+      <h2>Jewellery 💎</h2>
+
+      <p>Elegant accessories for every occasion.</p>
+
+    </div>
+
+
+    <div class="product-grid">
+
+      <div class="product-card">
+
+        <div class="product-image">💎</div>
+
+        <div class="product-info">
+
+          <span class="category-label">Jewellery</span>
+
+          <h3>Elegant Necklace Set</h3>
+
+          <div class="price">
+            ₹399
+            <span class="old-price">₹799</span>
+          </div>
+
+          <a href="#" class="deal-btn">CHECK PRICE</a>
+
+        </div>
+
+      </div>
+
+
+      <div class="product-card">
+
+        <div class="product-image">💍</div>
+
+        <div class="product-info">
+
+          <span class="category-label">Jewellery</span>
+
+          <h3>Fashion Ring Set</h3>
+
+          <div class="price">
+            ₹199
+            <span class="old-price">₹499</span>
+          </div>
+
+          <a href="#" class="deal-btn">CHECK PRICE</a>
+
+        </div>
+
+      </div>
+
+
+      <div class="product-card">
+
+        <div class="product-image">📿</div>
+
+        <div class="product-info">
+
+          <span class="category-label">Jewellery</span>
+
+          <h3>Traditional Jewellery Set</h3>
+
+          <div class="price">
+            ₹499
+            <span class="old-price">₹999</span>
+          </div>
+
+          <a href="#" class="deal-btn">CHECK PRICE</a>
+
+        </div>
+
+      </div>
+
+
+      <div class="product-card">
+
+        <div class="product-image">✨</div>
+
+        <div class="product-info">
+
+          <span class="category-label">Jewellery</span>
+
+          <h3>Minimal Earrings</h3>
+
+          <div class="price">
+            ₹149
+            <span class="old-price">₹349</span>
+          </div>
+
+          <a href="#" class="deal-btn">CHECK PRICE</a>
+
+        </div>
+
+      </div>
+
+    </div>
 
   </div>
 
+</section>
 
-  <div class="why-grid">
+
+<!-- ================= KITCHENWARE ================= -->
+
+<section id="kitchenware">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <small>HOME ESSENTIALS</small>
+
+      <h2>Kitchenware 🍳</h2>
+
+      <p>Useful kitchen products and smart home finds.</p>
+
+    </div>
 
 
-    <div class="why-card">
+    <div class="product-grid">
 
-      <div class="why-icon">
-        ✨
+      <div class="product-card">
+
+        <div class="product-image">🍳</div>
+
+        <div class="product-info">
+
+          <span class="category-label">Kitchen</span>
+
+          <h3>Non-Stick Fry Pan</h3>
+
+          <div class="price">
+            ₹449
+            <span class="old-price">₹799</span>
+          </div>
+
+          <a href="#" class="deal-btn">CHECK PRICE</a>
+
+        </div>
+
       </div>
 
-      <h3>
-        Curated Finds
-      </h3>
+
+      <div class="product-card">
+
+        <div class="product-image">🥤</div>
+
+        <div class="product-info">
+
+          <span class="category-label">Kitchen</span>
+
+          <h3>Water Bottle Set</h3>
+
+          <div class="price">
+            ₹299
+            <span class="old-price">₹599</span>
+          </div>
+
+          <a href="#" class="deal-btn">CHECK PRICE</a>
+
+        </div>
+
+      </div>
+
+
+      <div class="product-card">
+
+        <div class="product-image">🔪</div>
+
+        <div class="product-info">
+
+          <span class="category-label">Kitchen</span>
+
+          <h3>Kitchen Tool Set</h3>
+
+          <div class="price">
+            ₹349
+            <span class="old-price">₹699</span>
+          </div>
+
+          <a href="#" class="deal-btn">CHECK PRICE</a>
+
+        </div>
+
+      </div>
+
+
+      <div class="product-card">
+
+        <div class="product-image">🫙</div>
+
+        <div class="product-info">
+
+          <span class="category-label">Kitchen</span>
+
+          <h3>Storage Container Set</h3>
+
+          <div class="price">
+            ₹399
+            <span class="old-price">₹799</span>
+          </div>
+
+          <a href="#" class="deal-btn">CHECK PRICE</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= UNDER 499 ================= -->
+
+<section class="dark-section" id="under499">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <small>BUDGET DEALS</small>
+
+      <h2>Under ₹499</h2>
+
+      <p>Affordable trending products.</p>
+
+    </div>
+
+
+    <div class="product-grid">
+
+      <div class="product-card">
+
+        <div class="product-image">👕</div>
+
+        <div class="product-info">
+
+          <span class="category-label">Fashion</span>
+
+          <h3>Trendy T-Shirt</h3>
+
+          <div class="price">₹399</div>
+
+          <a href="#" class="deal-btn">CHECK PRICE</a>
+
+        </div>
+
+      </div>
+
+
+      <div class="product-card">
+
+        <div class="product-image">💎</div>
+
+        <div class="product-info">
+
+          <span class="category-label">Jewellery</span>
+
+          <h3>Fashion Earrings</h3>
+
+          <div class="price">₹199</div>
+
+          <a href="#" class="deal-btn">CHECK PRICE</a>
+
+        </div>
+
+      </div>
+
+
+      <div class="product-card">
+
+        <div class="product-image">🔌</div>
+
+        <div class="product-info">
+
+          <span class="category-label">Gadget</span>
+
+          <h3>Fast Charger</h3>
+
+          <div class="price">₹299</div>
+
+          <a href="#" class="deal-btn">CHECK PRICE</a>
+
+        </div>
+
+      </div>
+
+
+      <div class="product-card">
+
+        <div class="product-image">🍳</div>
+
+        <div class="product-info">
+
+          <span class="category-label">Kitchen</span>
+
+          <h3>Kitchen Essential</h3>
+
+          <div class="price">₹349</div>
+
+          <a href="#" class="deal-btn">CHECK PRICE</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= CONTACT / QUERY ================= -->
+
+<section class="contact-section" id="contact">
+
+  <div class="contact-container">
+
+    <div class="contact-heading">
+
+      <small>GET IN TOUCH</small>
+
+      <h2>Any Queries?</h2>
 
       <p>
-        Discover products selected for style,
-        usefulness and value.
+        Have a question about a product, deal or TrendNest?
+        Write your query below and send it to us.
       </p>
 
     </div>
 
 
-    <div class="why-card">
+    <!-- MAILTO QUERY FORM -->
 
-      <div class="why-icon">
-        💰
-      </div>
+    <form
+      action="mailto:shashanksavita55@gmail.com"
+      method="post"
+      enctype="text/plain"
+      class="query-form">
 
-      <h3>
-        Better Deals
-      </h3>
+      <input
+        type="text"
+        name="Name"
+        placeholder="Your Name"
+        required>
 
-      <p>
-        Find interesting products without
-        searching across multiple places.
-      </p>
+      <input
+        type="email"
+        name="Email"
+        placeholder="Your Email"
+        required>
 
-    </div>
+      <textarea
+        name="Query"
+        rows="6"
+        placeholder="Write your query here..."
+        required></textarea>
+
+      <button type="submit">
+        ✉️ Send Query
+      </button>
+
+    </form>
 
 
-    <div class="why-card">
+    <div class="direct-email">
 
-      <div class="why-icon">
-        🔥
-      </div>
+      <p>Contact Us on Mail</p>
 
-      <h3>
-        Trending Products
-      </h3>
-
-      <p>
-        Explore popular fashion, gadgets
-        and lifestyle products.
-      </p>
+      <a href="mailto:shashanksavita55@gmail.com?subject=TrendNest%20Customer%20Query">
+        ✉️ shashanksavita55@gmail.com
+      </a>
 
     </div>
 
@@ -2014,26 +2235,13 @@ footer{
 </section>
 
 
-<!-- =====================================================
-     SOCIAL MEDIA
-===================================================== -->
+<!-- ================= SOCIAL ================= -->
 
-<section class="section social">
+<section class="social-section">
 
-  <div class="heading">
+  <h2>Follow TrendNest</h2>
 
-    <small>Stay Connected</small>
-
-    <h2>Follow TrendNest</h2>
-
-    <p>
-      Follow us for new finds, deals and trending products.
-    </p>
-
-  </div>
-
-
-  <div class="social-buttons">
+  <div class="social-links">
 
     <a href="#" target="_blank">
       📸 Instagram
@@ -2044,7 +2252,7 @@ footer{
     </a>
 
     <a href="#" target="_blank">
-      📘 Facebook
+      👍 Facebook
     </a>
 
     <a href="#" target="_blank">
@@ -2056,93 +2264,211 @@ footer{
 </section>
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-  <div class="footer-logo">
-    Trend<span>Nest</span>
-  </div>
-
   <p>
-    Discover What's Trending.
+    © 2026 <strong>TrendNest</strong>.
+    All Rights Reserved.
   </p>
 
-
-  <p style="margin-top:15px;font-size:11px;">
-    © 2026 TrendNest. All Rights Reserved.
+  <p style="margin-top:8px;">
+    Discover • Compare • Shop
   </p>
 
 </footer>
 
 
-<!-- =====================================================
-     REVIEW JAVASCRIPT
-===================================================== -->
+<!-- ================= JAVASCRIPT ================= -->
 
 <script>
 
-function submitReview(productId){
+/* ================= STAR RATING ================= */
 
-  const selected =
+document.querySelectorAll(".stars").forEach(function(starBox){
+
+  const buttons = starBox.querySelectorAll("button");
+
+  buttons.forEach(function(button,index){
+
+    button.addEventListener("click",function(){
+
+      buttons.forEach(function(btn,i){
+
+        if(i <= index){
+          btn.classList.add("active");
+        }else{
+          btn.classList.remove("active");
+        }
+
+      });
+
+      starBox.dataset.rating = index + 1;
+
+    });
+
+  });
+
+});
+
+
+/* ================= SAVE REVIEW ================= */
+
+function saveReview(productId){
+
+  const starBox =
     document.querySelector(
-      'input[name="' + productId + '-rating"]:checked'
+      '.stars[data-product="' + productId + '"]'
     );
+
+  const commentBox =
+    document.querySelector(
+      'textarea[data-comment="' + productId + '"]'
+    );
+
+  const reviewBox =
+    document.getElementById(
+      "review-" + productId
+    );
+
+  const rating =
+    parseInt(starBox.dataset.rating || "0");
 
   const comment =
-    document.getElementById(
-      productId + '-comment'
-    ).value.trim();
-
-  const message =
-    document.getElementById(
-      productId + '-message'
-    );
+    commentBox.value.trim();
 
 
-  if(!selected){
+  if(rating === 0){
 
-    message.innerText =
-      "Please select a rating from 1 to 5 stars.";
+    alert("Please select a star rating.");
 
     return;
+
   }
 
 
-  const rating = selected.value;
+  if(comment === ""){
+
+    alert("Please write your comment.");
+
+    return;
+
+  }
 
 
   const review = {
-
     rating:rating,
-
-    comment:comment,
-
-    date:new Date().toLocaleDateString()
-
+    comment:comment
   };
 
 
   localStorage.setItem(
-
     "trendnest-review-" + productId,
-
     JSON.stringify(review)
-
   );
 
 
-  message.innerText =
-    "✓ Thank you! Your " +
-    rating +
-    "-star rating has been saved.";
+  showReview(
+    productId,
+    review
+  );
+
+
+  alert("Thank you! Your review has been saved on this device.");
+
+}
+
+
+/* ================= SHOW REVIEW ================= */
+
+function showReview(productId,review){
+
+  const reviewBox =
+    document.getElementById(
+      "review-" + productId
+    );
+
+
+  let stars = "";
+
+  for(let i=1;i<=5;i++){
+
+    stars +=
+      i <= review.rating
+      ? "★"
+      : "☆";
+
+  }
+
+
+  reviewBox.innerHTML =
+
+    '<div class="saved-stars">' +
+    stars +
+    '</div>' +
+
+    '<div>' +
+    escapeHtml(review.comment) +
+    '</div>';
+
+
+  reviewBox.style.display = "block";
+
+}
+
+
+/* ================= LOAD REVIEWS ================= */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function(){
+
+    document.querySelectorAll(
+      ".stars"
+    ).forEach(function(starBox){
+
+      const productId =
+        starBox.dataset.product;
+
+      const saved =
+        localStorage.getItem(
+          "trendnest-review-" + productId
+        );
+
+
+      if(saved){
+
+        const review =
+          JSON.parse(saved);
+
+        showReview(
+          productId,
+          review
+        );
+
+      }
+
+    });
+
+  }
+);
+
+
+/* ================= SECURITY ================= */
+
+function escapeHtml(text){
+
+  const div =
+    document.createElement("div");
+
+  div.textContent = text;
+
+  return div.innerHTML;
 
 }
 
 </script>
-
 
 </body>
 </html>
